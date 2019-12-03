@@ -1,0 +1,11 @@
+modelCheck('endo1model.txt')
+modelData('endo1data.txt')
+modelCompile(1)
+modelInits('endo1inits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

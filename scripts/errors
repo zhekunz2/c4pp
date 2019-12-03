@@ -1,0 +1,1824 @@
+/home/saikat/projects/c4pp/programs/templates/radon_intercept/radon_intercept.template
+/home/saikat/projects/c4pp/programs/templates/radon_intercept
+radon_intercept
+indices:
+{u'i': True, u'county': True, u'N': True}
+saikat@saikat-XPS-15:~/projects/c4pp$ cd programs/templates/
+saikat@saikat-XPS-15:~/projects/c4pp/programs/templates$ find -name "*.py"
+./radon_intercept/radon_intercept.py
+saikat@saikat-XPS-15:~/projects/c4pp/programs/templates$ cd ..
+saikat@saikat-XPS-15:~/projects/c4pp/programs$ cd ..
+saikat@saikat-XPS-15:~/projects/c4pp$ ./scripts/translate_to_pyro.sh
+/home/saikat/projects/c4pp/programs/templates/radon_intercept/radon_intercept.template
+/home/saikat/projects/c4pp/programs/templates/radon_intercept
+radon_intercept
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon.2/radon.2.template
+/home/saikat/projects/c4pp/programs/templates/radon.2
+radon
+a
+J
+normal(a[county[n]]+b*x[n],sigma_y)
+normal(a[county[n]]+b*x[n],sigma_y)
+normal(a[county[n]]+b*x[n],sigma_y)
+indices:
+{u'county': True, u'n': True, u'J': True, u'j': True, u'N': True}
+cp: cannot stat 'radon.py': No such file or directory
+/home/saikat/projects/c4pp/programs/templates/electric_1a/electric_1a.template
+/home/saikat/projects/c4pp/programs/templates/electric_1a
+electric_1a
+u'a'
+a not found
+indices:
+{u'n_pair': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/eight_schools/eight_schools.template
+/home/saikat/projects/c4pp/programs/templates/eight_schools
+eight_schools
+normal(theta,sigma)
+normal(theta,sigma)
+normal(theta,sigma)
+indices:
+{u'J': True}
+/home/saikat/projects/c4pp/programs/templates/parallelogram/parallelogram.template
+/home/saikat/projects/c4pp/programs/templates/parallelogram
+parallelogram
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/hepatitisME/hepatitisME.template
+/home/saikat/projects/c4pp/programs/templates/hepatitisME
+hepatitisME
+normal(mu0[n],sigma_y)
+normal(mu0[n],sigma_y)
+normal(mu0[n],sigma_y)
+indices:
+{u'N1': True, u'n': True, u'oldn': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_dae_c/wells_dae_c.template
+/home/saikat/projects/c4pp/programs/templates/wells_dae_c
+wells_dae_c
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*da_inter+beta[5]*educ4)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*da_inter+beta[5]*educ4)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*da_inter+beta[5]*educ4)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_floor2_chr/radon_vary_intercept_floor2_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_floor2_chr
+radon_vary_intercept_floor2_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/fx_factor/fx_factor.template
+/home/saikat/projects/c4pp/programs/templates/fx_factor
+fx_factor
+indices:
+{u'i': True}
+/home/saikat/projects/c4pp/programs/templates/radon/radon.template
+/home/saikat/projects/c4pp/programs/templates/radon
+radon
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/GLM_Binomial/GLM_Binomial.template
+/home/saikat/projects/c4pp/programs/templates/GLM_Binomial
+GLM_Binomial
+p[i]=inv_logit(logit_p[i])
+set([u'i', u'logit_p'])
+binomial_logit(N,logit_p)
+binomial_logit(N,logit_p)
+indices:
+{u'i': True, u'nyears': True}
+/home/saikat/projects/c4pp/programs/templates/dogs_log/dogs_log.template
+/home/saikat/projects/c4pp/programs/templates/dogs_log
+dogs_log
+beta
+2
+bernoulli(p[i,j])
+bernoulli(p[i,j])
+bernoulli(p[i,j])
+indices:
+{u'i': True, u'j': True, u't': True}
+/home/saikat/projects/c4pp/programs/templates/lightspeed/lightspeed.template
+/home/saikat/projects/c4pp/programs/templates/lightspeed
+lightspeed
+normal(beta[1],sigma)
+normal(beta[1],sigma)
+normal(beta[1],sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_interaction/wells_interaction.template
+/home/saikat/projects/c4pp/programs/templates/wells_interaction
+wells_interaction
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[4]*inter)
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[4]*inter)
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[4]*inter)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/schools/schools.template
+/home/saikat/projects/c4pp/programs/templates/schools
+schools
+normal(theta,sigma_y)
+normal(theta,sigma_y)
+normal(theta,sigma_y)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/pilots/pilots.template
+/home/saikat/projects/c4pp/programs/templates/pilots
+pilots
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'group_id': True, u'scenario_id': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/earnings_latin_square_chr/earnings_latin_square_chr.template
+/home/saikat/projects/c4pp/programs/templates/earnings_latin_square_chr
+earnings_latin_square_chr
+eta_c
+n_eth,n_age
+eta_d
+n_eth,n_age
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'eth': True, u'j': True, u'age': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/electric/electric.template
+/home/saikat/projects/c4pp/programs/templates/electric
+electric
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'pair': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells/wells.template
+/home/saikat/projects/c4pp/programs/templates/wells
+wells
+bernoulli_logit(beta[0]+beta[2]*distx/100)
+bernoulli_logit(beta[0]+beta[2]*distx/100)
+bernoulli_logit(beta[0]+beta[2]*distx/100)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/mesquite_volume/mesquite_volume.template
+/home/saikat/projects/c4pp/programs/templates/mesquite_volume
+mesquite_volume
+log_weight=normal<N>(beta[0]+beta[2]*log_canopy_volume,sigma)
+set([u'beta', u'log_canopy_volume', u'sigma', u'N'])
+normal<N>(beta[0]+beta[2]*log_canopy_volume,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/logearn_logheight/logearn_logheight.template
+/home/saikat/projects/c4pp/programs/templates/logearn_logheight
+logearn_logheight
+log_earn=normal<N>(beta[0]+beta[1]*log_height+beta[3]*male,sigma)
+set([u'beta', u'male', u'sigma', u'log_height', u'N'])
+normal<N>(beta[0]+beta[1]*log_height+beta[3]*male,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/logearn_interaction/logearn_interaction.template
+/home/saikat/projects/c4pp/programs/templates/logearn_interaction
+logearn_interaction
+log_earn=normal<N>(beta[0]+beta[1]*height+beta[2]*male+beta[4]*inter,sigma)
+set([u'male', u'N', u'height', u'beta', u'inter', u'sigma'])
+normal<N>(beta[0]+beta[1]*height+beta[2]*male+beta[4]*inter,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon.pooling/radon.pooling.template
+/home/saikat/projects/c4pp/programs/templates/radon.pooling
+radon
+normal(a+b*x,sigma_y)
+normal(a+b*x,sigma_y)
+normal(a+b*x,sigma_y)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/normal/normal.template
+/home/saikat/projects/c4pp/programs/templates/normal
+normal
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/ma2/ma2.template
+/home/saikat/projects/c4pp/programs/templates/ma2
+ma2
+normal(mu+theta[0]*epsilon[t-1]+theta[1]*epsilon[t-2],sigma)
+normal(mu+theta[0]*epsilon[t-1]+theta[1]*epsilon[t-2],sigma)
+normal(mu+theta[0]*epsilon[t-1]+theta[1]*epsilon[t-2],sigma)
+indices:
+{u'T': True, u't': True}
+/home/saikat/projects/c4pp/programs/templates/electric_1b_chr/electric_1b_chr.template
+/home/saikat/projects/c4pp/programs/templates/electric_1b_chr
+electric_1b_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'pair': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/election88/election88.template
+/home/saikat/projects/c4pp/programs/templates/election88
+election88
+bernoulli_logit(y_hat)
+bernoulli_logit(y_hat)
+bernoulli_logit(y_hat)
+indices:
+{u'i': True, u'state': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/earnings1/earnings1.template
+/home/saikat/projects/c4pp/programs/templates/earnings1
+earnings1
+bernoulli_logit(beta[0]+beta[1]*height+beta[3]*male)
+bernoulli_logit(beta[0]+beta[1]*height+beta[3]*male)
+bernoulli_logit(beta[0]+beta[1]*height+beta[3]*male)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/fire/fire.template
+/home/saikat/projects/c4pp/programs/templates/fire
+fire
+tmp=(sqrt(2*pi())*alpha*sigma*Phi(alpha*sigma)*exp(0.5*pow(alpha*sigma,2)))
+set([u'alpha', u'sigma'])
+log_tmp=log(tmp)
+set([u'tmp'])
+neg_log1p_temp=-log1p(tmp)
+set([u'tmp'])
+log_Phi_alpha_times_sigma=log(Phi(alpha*sigma))
+set([u'alpha', u'sigma'])
+lpa[i]=(log_tmp+neg_log1p_temp-log_Phi_alpha_times_sigma+lognormal_lpdf(x[i],mu,sigma))
+set([u'log_Phi_alpha_times_sigma', u'i', u'log_tmp', u'mu', u'neg_log1p_temp', u'x', u'sigma'])
+lpa[i]=(neg_log1p_temp+pareto_lpdf(x[i],theta,alpha))
+set([u'i', u'x', u'alpha', u'neg_log1p_temp', u'theta'])
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/mesquite/mesquite.template
+/home/saikat/projects/c4pp/programs/templates/mesquite
+mesquite
+normal(beta[0]+beta[1]*diam1+beta[2]*diam2+beta[3]*canopy_height+beta[4]*total_height+beta[5]*density+beta[7]*group,sigma)
+normal(beta[0]+beta[1]*diam1+beta[2]*diam2+beta[3]*canopy_height+beta[4]*total_height+beta[5]*density+beta[7]*group,sigma)
+normal(beta[0]+beta[1]*diam1+beta[2]*diam2+beta[3]*canopy_height+beta[4]*total_height+beta[5]*density+beta[7]*group,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_a/radon_vary_intercept_a.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_a
+radon_vary_intercept_a
+u'a'
+a not found
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/electric_1c/electric_1c.template
+/home/saikat/projects/c4pp/programs/templates/electric_1c
+electric_1c
+u'a'
+a not found
+indices:
+{u'n_pair': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_no_pool_chr/radon_no_pool_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_no_pool_chr
+radon_no_pool_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_logit/wells_logit.template
+/home/saikat/projects/c4pp/programs/templates/wells_logit
+wells_logit
+bernoulli_logit(beta[0]+beta[2]*distx100)
+bernoulli_logit(beta[0]+beta[2]*distx100)
+bernoulli_logit(beta[0]+beta[2]*distx100)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon.3/radon.3.template
+/home/saikat/projects/c4pp/programs/templates/radon.3
+radon
+a
+J
+normal(a[county[n]]+b*x[n],sigma_y)
+normal(a[county[n]]+b*x[n],sigma_y)
+normal(a[county[n]]+b*x[n],sigma_y)
+indices:
+{u'county': True, u'n': True, u'J': True, u'j': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/sesame_one_pred_a/sesame_one_pred_a.template
+/home/saikat/projects/c4pp/programs/templates/sesame_one_pred_a
+sesame_one_pred_a
+normal(beta[0]+beta[2]*encouraged,sigma)
+normal(beta[0]+beta[2]*encouraged,sigma)
+normal(beta[0]+beta[2]*encouraged,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_nofloor/radon_vary_intercept_nofloor.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_nofloor
+radon_vary_intercept_nofloor
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/election88_expansion/election88_expansion.template
+/home/saikat/projects/c4pp/programs/templates/election88_expansion
+election88_expansion
+u'b_state_raw'
+b_state_raw not found
+u'b_age_edu'
+b_age_edu not found
+indices:
+{u'N': True, u'n_state': True}
+/home/saikat/projects/c4pp/programs/templates/sesame_multi_preds_3a/sesame_multi_preds_3a.template
+/home/saikat/projects/c4pp/programs/templates/sesame_multi_preds_3a
+sesame_multi_preds_3a
+normal(beta[0]+beta[1]*encouraged+beta[2]*pretest+beta[3]*site2+beta[4]*site3+beta[5]*site4+beta[6]*site5+beta[8]*setting,sigma)
+normal(beta[0]+beta[1]*encouraged+beta[2]*pretest+beta[3]*site2+beta[4]*site3+beta[5]*site4+beta[6]*site5+beta[8]*setting,sigma)
+normal(beta[0]+beta[1]*encouraged+beta[2]*pretest+beta[3]*site2+beta[4]*site3+beta[5]*site4+beta[6]*site5+beta[8]*setting,sigma)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/air/air.template
+/home/saikat/projects/c4pp/programs/templates/air
+air
+binomial_logit(n,theta1+theta2*X)
+binomial_logit(n,theta1+theta2*X)
+indices:
+{u'J': True}
+/home/saikat/projects/c4pp/programs/templates/hearts/hearts.template
+/home/saikat/projects/c4pp/programs/templates/hearts
+hearts
+p=inv_logit(alpha)
+set([u'alpha'])
+log1m_theta=log1m(theta)
+set([u'theta'])
+beta=exp(alpha)
+set([u'alpha'])
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/earnings_vary_si_chr/earnings_vary_si_chr.template
+/home/saikat/projects/c4pp/programs/templates/earnings_vary_si_chr
+earnings_vary_si_chr
+log_earn=normal<N>(y_hat,sigma_y)
+set([u'sigma_y', u'y_hat', u'N'])
+normal<N>(y_hat,sigma_y)
+indices:
+{u'i': True, u'eth': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/weight_censored/weight_censored.template
+/home/saikat/projects/c4pp/programs/templates/weight_censored
+weight_censored
+weight_obs=normal<N_obs>(a+b*c_height_obs,sigma)
+set([u'N_obs', u'a', u'c_height_obs', u'b', u'sigma'])
+normal<N_obs>(a+b*c_height_obs,sigma)
+indices:
+{u'i': True, u'n': True, u'j': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/binormal/binormal.template
+/home/saikat/projects/c4pp/programs/templates/binormal
+binormal
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/lda/lda.template
+/home/saikat/projects/c4pp/programs/templates/lda
+lda
+theta
+M,K
+phi
+K,V
+indices:
+{u'm': True, u'K': True, u'M': True, u'N': True, u'doc': True, u'w': True, u'V': True, u'n': True, u'k': True}
+/home/saikat/projects/c4pp/programs/templates/beetles_probit/beetles_probit.template
+/home/saikat/projects/c4pp/programs/templates/beetles_probit
+beetles_probit
+alpha=alpha_star-beta*mean_x
+set([u'beta', u'mean_x', u'alpha_star'])
+llike[i]=r[i]*log(p[i])+(n[i]-r[i])*log(1-p[i])
+set([u'i', u'p', u'r', u'n'])
+rhat[i]=p[i]*n[i]
+set([u'i', u'p', u'n'])
+binomial(n,p)
+binomial(n,p)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/weight/weight.template
+/home/saikat/projects/c4pp/programs/templates/weight
+weight
+normal(a+b*c_height,sigma)
+normal(a+b*c_height,sigma)
+normal(a+b*c_height,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/endo1/endo1.template
+/home/saikat/projects/c4pp/programs/templates/endo1
+endo1
+binomial_logit(1.0,beta*est1m2)
+binomial_logit(1.0,beta*est1m2)
+indices:
+{u'i': True}
+/home/saikat/projects/c4pp/programs/templates/electric_1c_chr/electric_1c_chr.template
+/home/saikat/projects/c4pp/programs/templates/electric_1c_chr
+electric_1c_chr
+normal(y_hat,sigma_y_hat)
+normal(y_hat,sigma_y_hat)
+normal(y_hat,sigma_y_hat)
+indices:
+{u'i': True, u'grade_pair': True, u'N': True, u'grade': True, u'n_pair': True, u'pair': True}
+/home/saikat/projects/c4pp/programs/templates/wells_dist100/wells_dist100.template
+/home/saikat/projects/c4pp/programs/templates/wells_dist100
+wells_dist100
+bernoulli_logit(beta[0]+beta[2]*distx100)
+bernoulli_logit(beta[0]+beta[2]*distx100)
+bernoulli_logit(beta[0]+beta[2]*distx100)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/flight_simulator_17.3/flight_simulator_17.3.template
+/home/saikat/projects/c4pp/programs/templates/flight_simulator_17.3
+flight_simulator_17
+y_hat[i]=mu+gamma[treatment[i]]+delta[airport[i]]
+set([u'i', u'mu', u'airport', u'treatment', u'delta', u'gamma'])
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+indices:
+{u'i': True, u'airport': True, u'treatment': True, u'N': True}
+cp: cannot stat 'flight_simulator_17.py': No such file or directory
+/home/saikat/projects/c4pp/programs/templates/sesame_multi_preds_3b/sesame_multi_preds_3b.template
+/home/saikat/projects/c4pp/programs/templates/sesame_multi_preds_3b
+sesame_multi_preds_3b
+normal(beta[0]+beta[1]*watched_hat+beta[2]*pretest+beta[3]*site2+beta[4]*site3+beta[5]*site4+beta[6]*site5+beta[8]*setting,sigma)
+normal(beta[0]+beta[1]*watched_hat+beta[2]*pretest+beta[3]*site2+beta[4]*site3+beta[5]*site4+beta[6]*site5+beta[8]*setting,sigma)
+normal(beta[0]+beta[1]*watched_hat+beta[2]*pretest+beta[3]*site2+beta[4]*site3+beta[5]*site4+beta[6]*site5+beta[8]*setting,sigma)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/earnings2/earnings2.template
+/home/saikat/projects/c4pp/programs/templates/earnings2
+earnings2
+log_earnings=normal<N>(beta[0]+beta[1]*height+beta[3]*male,sigma)
+set([u'height', u'beta', u'male', u'sigma', u'N'])
+normal<N>(beta[0]+beta[1]*height+beta[3]*male,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/stochastic-volatility/stochastic-volatility.template
+/home/saikat/projects/c4pp/programs/templates/stochastic-volatility
+stochastic-volatility
+h
+T
+indices:
+{u't': True}
+/home/saikat/projects/c4pp/programs/templates/hiv_inter/hiv_inter.template
+/home/saikat/projects/c4pp/programs/templates/hiv_inter
+hiv_inter
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'person': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/irt_multilevel/irt_multilevel.template
+/home/saikat/projects/c4pp/programs/templates/irt_multilevel
+irt_multilevel
+bernoulli_logit(alpha[jj[n]]-beta[kk[n]]+delta)
+bernoulli_logit(alpha[jj[n]]-beta[kk[n]]+delta)
+bernoulli_logit(alpha[jj[n]]-beta[kk[n]]+delta)
+indices:
+{u'kk': True, u'K': True, u'J': True, u'n': True, u'jj': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/multilevel_logistic_17.4/multilevel_logistic_17.4.template
+/home/saikat/projects/c4pp/programs/templates/multilevel_logistic_17.4
+multilevel_logistic_17
+b_state_hat[j]=b_region[region[j]]+b_v_prev*v_prev[j]
+set([u'v_prev', u'b_region', u'region', u'j', u'b_v_prev'])
+p[i]=fmax(0,fmin(1,inv_logit(b_0+b_female*female[i]+b_black*black[i]+b_female_black*female[i]*black[i]+b_age[age[i]]+b_edu[edu[i]]+b_age_edu[age[i],edu[i]]+b_hat[state[i]])))
+set([u'b_black', u'b_age_edu', u'b_female_black', u'i', u'b_female', u'age', u'b_age', u'state', u'black', u'female', u'edu', u'b_0', u'b_edu', u'b_hat'])
+b_age_edu
+n_age,n_edu
+bernoulli(p)
+bernoulli(p)
+bernoulli(p)
+indices:
+{u'i': True, u'region': True, u'j': True, u'N': True, u'state': True, u'n_state': True, u'edu': True, u'age': True}
+cp: cannot stat 'multilevel_logistic_17.py': No such file or directory
+/home/saikat/projects/c4pp/programs/templates/mice/mice.template
+/home/saikat/projects/c4pp/programs/templates/mice
+mice
+median[m]=pow(log(2)*exp(-beta[m]),1/r)
+set([u'beta', u'r', u'm'])
+veh_control=beta[2]-beta[1]
+set([u'beta'])
+test_sub=beta[3]-beta[1]
+set([u'beta'])
+pos_control=beta[4]-beta[1]
+set([u'beta'])
+weibull(r,exp(-beta[group_uncensored[n]]/r))
+weibull(r,exp(-beta[group_uncensored[n]]/r))
+weibull(r,exp(-beta[group_uncensored[n]]/r))
+t2_censored
+N_censored
+indices:
+{u'group_uncensored': True, u'N_uncensored': True, u'M': True, u'm': True, u'n': True, u'N_censored': True, u'group_censored': True}
+/home/saikat/projects/c4pp/programs/templates/mesquite_log/mesquite_log.template
+/home/saikat/projects/c4pp/programs/templates/mesquite_log
+mesquite_log
+log_weight=normal<N>(beta[0]+beta[1]*log_diam1+beta[2]*log_diam2+beta[3]*log_canopy_height+beta[4]*log_total_height+beta[5]*log_density+beta[7]*group,sigma)
+set([u'group', u'log_density', u'log_total_height', u'log_diam1', u'N', u'log_canopy_height', u'log_diam2', u'beta', u'sigma'])
+normal<N>(beta[0]+beta[1]*log_diam1+beta[2]*log_diam2+beta[3]*log_canopy_height+beta[4]*log_total_height+beta[5]*log_density+beta[7]*group,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_daae_c/wells_daae_c.template
+/home/saikat/projects/c4pp/programs/templates/wells_daae_c
+wells_daae_c
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*da_inter+beta[4]*assoc+beta[6]*educ4)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*da_inter+beta[4]*assoc+beta[6]*educ4)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*da_inter+beta[4]*assoc+beta[6]*educ4)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/pump/pump.template
+/home/saikat/projects/c4pp/programs/templates/pump
+pump
+poisson(theta*t)
+poisson(theta*t)
+poisson(theta*t)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/koyck/koyck.template
+/home/saikat/projects/c4pp/programs/templates/koyck
+koyck
+normal(alpha+beta*x[t]+lambdax*y[t-1],sigma)
+normal(alpha+beta*x[t]+lambdax*y[t-1],sigma)
+normal(alpha+beta*x[t]+lambdax*y[t-1],sigma)
+indices:
+{u'T': True, u't': True}
+/home/saikat/projects/c4pp/programs/templates/kidiq_interaction_c2/kidiq_interaction_c2.template
+/home/saikat/projects/c4pp/programs/templates/kidiq_interaction_c2
+kidiq_interaction_c2
+normal(beta[0]+beta[1]*c2_mom_hs+beta[2]*c2_mom_iq+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*c2_mom_hs+beta[2]*c2_mom_iq+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*c2_mom_hs+beta[2]*c2_mom_iq+beta[4]*inter,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/squaremc/squaremc.template
+/home/saikat/projects/c4pp/programs/templates/squaremc
+squaremc
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/logearn_interaction_z/logearn_interaction_z.template
+/home/saikat/projects/c4pp/programs/templates/logearn_interaction_z
+logearn_interaction_z
+log_earn=normal<N>(beta[0]+beta[1]*z_height+beta[2]*male+beta[4]*inter,sigma)
+set([u'male', u'sigma', u'N', u'beta', u'inter', u'z_height'])
+normal<N>(beta[0]+beta[1]*z_height+beta[2]*male+beta[4]*inter,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/anova_radon_nopred_chr/anova_radon_nopred_chr.template
+/home/saikat/projects/c4pp/programs/templates/anova_radon_nopred_chr
+anova_radon_nopred_chr
+e_y=y-y_hat
+set([u'y', u'y_hat'])
+s_a=sd(a)
+set([u'a'])
+s_y=sd(e_y)
+set([u'e_y'])
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_dist/wells_dist.template
+/home/saikat/projects/c4pp/programs/templates/wells_dist
+wells_dist
+bernoulli_logit(beta[0]+beta[2]*distx)
+bernoulli_logit(beta[0]+beta[2]*distx)
+bernoulli_logit(beta[0]+beta[2]*distx)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/Rate_1/Rate_1.template
+/home/saikat/projects/c4pp/programs/templates/Rate_1
+Rate_1
+binomial(n,theta)
+binomial(n,theta)
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/kidiq_interaction_c/kidiq_interaction_c.template
+/home/saikat/projects/c4pp/programs/templates/kidiq_interaction_c
+kidiq_interaction_c
+normal(beta[0]+beta[1]*c_mom_hs+beta[2]*c_mom_iq+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*c_mom_hs+beta[2]*c_mom_iq+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*c_mom_hs+beta[2]*c_mom_iq+beta[4]*inter,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/oxford/oxford.template
+/home/saikat/projects/c4pp/programs/templates/oxford
+oxford
+binomial_logit(n0,mu)
+binomial_logit(n0,mu)
+binomial_logit(n1,alpha+mu+beta1*year+beta2*(yearsq-22)+b*sigma)
+binomial_logit(n1,alpha+mu+beta1*year+beta2*(yearsq-22)+b*sigma)
+indices:
+{u'K': True}
+/home/saikat/projects/c4pp/programs/templates/radon_group/radon_group.template
+/home/saikat/projects/c4pp/programs/templates/radon_group
+radon_group
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/pilots_chr/pilots_chr.template
+/home/saikat/projects/c4pp/programs/templates/pilots_chr
+pilots_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'group_id': True, u'scenario_id': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/seeds_centered/seeds_centered.template
+/home/saikat/projects/c4pp/programs/templates/seeds_centered
+seeds_centered
+binomial_logit(N,alpha0+alpha1*x1+alpha2*x2+alpha12*x1x2+b)
+binomial_logit(N,alpha0+alpha1*x1+alpha2*x2+alpha12*x1x2+b)
+indices:
+{u'I': True}
+/home/saikat/projects/c4pp/programs/templates/dogs/dogs.template
+/home/saikat/projects/c4pp/programs/templates/dogs
+dogs
+bernoulli_logit(p[i,j])
+bernoulli_logit(p[i,j])
+bernoulli_logit(p[i,j])
+indices:
+{u'i': True, u'j': True, u't': True}
+/home/saikat/projects/c4pp/programs/templates/arma11_alt/arma11_alt.template
+/home/saikat/projects/c4pp/programs/templates/arma11_alt
+arma11_alt
+err=y[1]-mu+phi*mu
+set([u'y', u'mu', u'phi'])
+err=y[t]-(mu+phi*y[t-1]+theta*err)
+set([u'mu', u'y', u'phi', u't', u'theta'])
+normal(0.0,sigma)
+normal(0.0,sigma)
+normal(0.0,sigma)
+normal(0.0,sigma)
+normal(0.0,sigma)
+normal(0.0,sigma)
+normal(0.0,sigma)
+normal(0.0,sigma)
+normal(0.0,sigma)
+indices:
+{u'T': True, u't': True}
+/home/saikat/projects/c4pp/programs/templates/bones/bones.template
+/home/saikat/projects/c4pp/programs/templates/bones
+bones
+p[i,j,1]=1-Q[i,j,1]
+set([u'i', u'Q', u'j'])
+p[i,j,ncat[j]]=Q[i,j,ncat[j]-1]
+set([u'i', u'Q', u'j', u'ncat'])
+indices:
+{u'i': True, u'k': True, u'j': True, u'grade': True, u'nInd': True, u'nChild': True, u'ncat': True}
+/home/saikat/projects/c4pp/programs/templates/cjs/cjs.template
+/home/saikat/projects/c4pp/programs/templates/cjs
+cjs
+beta3=phi[2]*p[3]
+set([u'p', u'phi'])
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/stagnant2/stagnant2.template
+/home/saikat/projects/c4pp/programs/templates/stagnant2
+stagnant2
+mu[n]=alpha+if_else(x[n]<x_change,beta[1],beta[2])*(x[n]-x_change)
+set([u'alpha', u'beta', u'n', u'x', u'x_change'])
+normal(mu,sigma)
+normal(mu,sigma)
+normal(mu,sigma)
+indices:
+{u'n': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/electric_tr/electric_tr.template
+/home/saikat/projects/c4pp/programs/templates/electric_tr
+electric_tr
+normal(beta[0]+beta[2]*treatment,sigma)
+normal(beta[0]+beta[2]*treatment,sigma)
+normal(beta[0]+beta[2]*treatment,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/seeds/seeds.template
+/home/saikat/projects/c4pp/programs/templates/seeds
+seeds
+b
+I,K
+binomial_logit(N[i],alpha0+alpha1*x1[i]+alpha2*x2[i]+alpha12*x1x2[i]+b[i])
+binomial_logit(N[i],alpha0+alpha1*x1[i]+alpha2*x2[i]+alpha12*x1x2[i]+b[i])
+indices:
+{u'I': True, u'i': True}
+/home/saikat/projects/c4pp/programs/templates/orange/orange.template
+/home/saikat/projects/c4pp/programs/templates/orange
+orange
+tau
+3
+u'theta'
+theta not found
+indices:
+{u'j': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_nofloor_chr/radon_vary_intercept_nofloor_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_nofloor_chr
+radon_vary_intercept_nofloor_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_chr/radon_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_chr
+radon_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/endo2/endo2.template
+/home/saikat/projects/c4pp/programs/templates/endo2
+endo2
+p[i,1]=exp(beta*est[i,1])
+set([u'i', u'beta', u'est'])
+p[i,2]=exp(beta*est[i,2])
+set([u'i', u'beta', u'est'])
+p[i,1]=p[i,1]/(p[i,1]+p[i,2])
+set([u'i'])
+p[i,2]=1-p[i,1]
+set([u'i'])
+indices:
+{u'i': True}
+/home/saikat/projects/c4pp/programs/templates/dyes/dyes.template
+/home/saikat/projects/c4pp/programs/templates/dyes
+dyes
+sigmasq_between=1/tau_between
+set([u'tau_between'])
+sigmasq_within=1/tau_within
+set([u'tau_within'])
+normal(mu[n],sigma_within)
+normal(mu[n],sigma_within)
+normal(mu[n],sigma_within)
+indices:
+{u'BATCHES': True, u'n': True}
+/home/saikat/projects/c4pp/programs/templates/electric_1b/electric_1b.template
+/home/saikat/projects/c4pp/programs/templates/electric_1b
+electric_1b
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'pair': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/election88_full/election88_full.template
+/home/saikat/projects/c4pp/programs/templates/election88_full
+election88_full
+bernoulli_logit(y_hat)
+bernoulli_logit(y_hat)
+bernoulli_logit(y_hat)
+indices:
+{u'i': True, u'age': True, u'age_edu': True, u'state': True, u'region_full': True, u'edu': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/ideo_two_pred/ideo_two_pred.template
+/home/saikat/projects/c4pp/programs/templates/ideo_two_pred
+ideo_two_pred
+normal(beta[0]+beta[1]*party+beta[3]*x,sigma)
+normal(beta[0]+beta[1]*party+beta[3]*x,sigma)
+normal(beta[0]+beta[1]*party+beta[3]*x,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/earn_height/earn_height.template
+/home/saikat/projects/c4pp/programs/templates/earn_height
+earn_height
+normal(beta[0]+beta[2]*height,sigma)
+normal(beta[0]+beta[2]*height,sigma)
+normal(beta[0]+beta[2]*height,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/pilots0/pilots0.template
+/home/saikat/projects/c4pp/programs/templates/pilots0
+pilots0
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'group_id': True, u'scenario_id': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/Rate_3/Rate_3.template
+/home/saikat/projects/c4pp/programs/templates/Rate_3
+Rate_3
+binomial(n1,theta)
+binomial(n1,theta)
+binomial(n2,theta)
+binomial(n2,theta)
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/radon.1/radon.1.template
+/home/saikat/projects/c4pp/programs/templates/radon.1
+radon
+normal(a[county[n]]+b*x[n],sigma_y)
+normal(a[county[n]]+b*x[n],sigma_y)
+normal(a[county[n]]+b*x[n],sigma_y)
+indices:
+{u'county': True, u'n': True, u'J': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/normal_censored/normal_censored.template
+/home/saikat/projects/c4pp/programs/templates/normal_censored
+normal_censored
+normal(mu,1.0)
+normal(mu,1.0)
+normal(mu,1.0)
+indices:
+{u'n': True, u'N_observed': True}
+/home/saikat/projects/c4pp/programs/templates/robit_17.7/robit_17.7.template
+/home/saikat/projects/c4pp/programs/templates/robit_17.7
+robit_17
+b_state_hat[j]=b_region[region[j]]+b_v_prev*v_prev[j]
+set([u'v_prev', u'b_region', u'region', u'j', u'b_v_prev'])
+Xbeta[i]=b_0+b_female*female[i]+b_black*black[i]+b_female_black*female[i]*black[i]+b_age[age[i]]+b_edu[edu[i]]+b_age_edu[age[i],edu[i]]+b_state[state[i]]
+set([u'b_black', u'b_age_edu', u'b_female_black', u'i', u'b_female', u'age', u'b_age', u'state', u'b_state', u'black', u'female', u'edu', u'b_0', u'b_edu'])
+p[i]=fmax(0,fmin(1,inv_logit(Xbeta[i])))
+set([u'i', u'Xbeta'])
+df=1/df_inv
+set([u'df_inv'])
+sigma_z=sqrt((df-2)/df)
+set([u'df'])
+z_lo[i]=100*(y[i]==0)
+set([u'i', u'y'])
+z_hi[i]=100*(y[i]==1)
+set([u'i', u'y'])
+b_age_edu
+n_age,n_edu
+bernoulli(p)
+bernoulli(p)
+bernoulli(p)
+student_t(df,Xbeta[i],sigma_z)
+student_t(df,Xbeta[i],sigma_z)
+student_t(df,Xbeta[i],sigma_z)
+indices:
+{u'i': True, u'region': True, u'j': True, u'N': True, u'state': True, u'n_state': True, u'edu': True, u'age': True}
+cp: cannot stat 'robit_17.py': No such file or directory
+/home/saikat/projects/c4pp/programs/templates/irt2/irt2.template
+/home/saikat/projects/c4pp/programs/templates/irt2
+irt2
+bernoulli_logit(exp(log_gamma[kk[n]])*(alpha[jj[n]]-beta[kk[n]]+delta))
+bernoulli_logit(exp(log_gamma[kk[n]])*(alpha[jj[n]]-beta[kk[n]]+delta))
+bernoulli_logit(exp(log_gamma[kk[n]])*(alpha[jj[n]]-beta[kk[n]]+delta))
+indices:
+{u'kk': True, u'K': True, u'J': True, u'n': True, u'jj': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/separation/separation.template
+/home/saikat/projects/c4pp/programs/templates/separation
+separation
+bernoulli_logit(beta[0]+beta[2]*x)
+bernoulli_logit(beta[0]+beta[2]*x)
+bernoulli_logit(beta[0]+beta[2]*x)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/Rate_2/Rate_2.template
+/home/saikat/projects/c4pp/programs/templates/Rate_2
+Rate_2
+binomial(n1,theta1)
+binomial(n1,theta1)
+binomial(n2,theta2)
+binomial(n2,theta2)
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/hiv_inter_chr/hiv_inter_chr.template
+/home/saikat/projects/c4pp/programs/templates/hiv_inter_chr
+hiv_inter_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'person': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/pines-independent/pines-independent.template
+/home/saikat/projects/c4pp/programs/templates/pines-independent
+pines-independent
+mu[1]=alpha+beta*x_std
+set([u'alpha', u'beta', u'x_std'])
+mu[2]=gamma+delta*z_std
+set([u'z_std', u'gamma', u'delta'])
+y_std=normal<N>(mu[0],sigma[1])
+set([u'mu', u'sigma', u'N'])
+y_std=normal<N>(mu[1],sigma[2])
+set([u'mu', u'sigma', u'N'])
+normal<N>(mu[0],sigma[1])
+normal<N>(mu[1],sigma[2])
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/surgical/surgical.template
+/home/saikat/projects/c4pp/programs/templates/surgical
+surgical
+pop_mean=inv_logit(mu)
+set([u'mu'])
+u'b'
+b not found
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/electric_trpre/electric_trpre.template
+/home/saikat/projects/c4pp/programs/templates/electric_trpre
+electric_trpre
+normal(beta[0]+beta[1]*treatment+beta[3]*pre_test,sigma)
+normal(beta[0]+beta[1]*treatment+beta[3]*pre_test,sigma)
+normal(beta[0]+beta[1]*treatment+beta[3]*pre_test,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/ideo_interactions/ideo_interactions.template
+/home/saikat/projects/c4pp/programs/templates/ideo_interactions
+ideo_interactions
+normal(beta[0]+beta[1]*party+beta[2]*x+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*party+beta[2]*x+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*party+beta[2]*x+beta[4]*inter,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/y_x/y_x.template
+/home/saikat/projects/c4pp/programs/templates/y_x
+y_x
+normal(beta[0]+beta[2]*x,sigma)
+normal(beta[0]+beta[2]*x,sigma)
+normal(beta[0]+beta[2]*x,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_predicted/wells_predicted.template
+/home/saikat/projects/c4pp/programs/templates/wells_predicted
+wells_predicted
+pred[i]=inv_logit(beta[1]+beta[2]*c_distx100[i]+beta[3]*c_arsenic[i]+beta[4]*c_educ4[i]+beta[5]*da_inter[i]+beta[6]*de_inter[i]+beta[7]*ae_inter[i])
+set([u'c_educ4', u'i', u'da_inter', u'beta', u'c_distx100', u'de_inter', u'ae_inter', u'c_arsenic'])
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*c_educ4+beta[4]*da_inter+beta[5]*de_inter+beta[7]*ae_inter)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*c_educ4+beta[4]*da_inter+beta[5]*de_inter+beta[7]*ae_inter)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[3]*c_educ4+beta[4]*da_inter+beta[5]*de_inter+beta[7]*ae_inter)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/electric_multi_preds/electric_multi_preds.template
+/home/saikat/projects/c4pp/programs/templates/electric_multi_preds
+electric_multi_preds
+normal(beta[0]+beta[1]*treatment+beta[3]*pre_test,sigma)
+normal(beta[0]+beta[1]*treatment+beta[3]*pre_test,sigma)
+normal(beta[0]+beta[1]*treatment+beta[3]*pre_test,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/mesquite_vas/mesquite_vas.template
+/home/saikat/projects/c4pp/programs/templates/mesquite_vas
+mesquite_vas
+log_weight=normal<N>(beta[0]+beta[1]*log_canopy_volume+beta[2]*log_canopy_area+beta[3]*log_canopy_shape+beta[4]*log_total_height+beta[5]*log_density+beta[7]*group,sigma)
+set([u'log_canopy_area', u'log_density', u'log_total_height', u'log_canopy_shape', u'beta', u'group', u'N', u'sigma', u'log_canopy_volume'])
+normal<N>(beta[0]+beta[1]*log_canopy_volume+beta[2]*log_canopy_area+beta[3]*log_canopy_shape+beta[4]*log_total_height+beta[5]*log_density+beta[7]*group,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/camel/camel.template
+/home/saikat/projects/c4pp/programs/templates/camel
+camel
+Y[1,1]=1
+set([])
+Y[1,2]=1
+set([])
+Y[2,1]=1
+set([])
+Y[2,2]=-1
+set([])
+Y[3,1]=-1
+set([])
+Y[3,2]=1
+set([])
+Y[4,1]=-1
+set([])
+Y[4,2]=-1
+set([])
+Y[5,1]=2
+set([])
+Y[6,1]=2
+set([])
+Y[7,1]=-2
+set([])
+Y[8,1]=-2
+set([])
+Y[5,2]=y52
+set([u'y52'])
+Y[6,2]=y62
+set([u'y62'])
+Y[7,2]=y72
+set([u'y72'])
+Y[8,2]=y82
+set([u'y82'])
+Y[9,1]=y91
+set([u'y91'])
+Y[10,1]=y101
+set([u'y101'])
+Y[11,1]=y111
+set([u'y111'])
+Y[12,1]=y121
+set([u'y121'])
+Y[9,2]=2
+set([])
+Y[10,2]=2
+set([])
+Y[11,2]=-2
+set([])
+Y[12,2]=-2
+set([])
+rho=Sigma[1,2]/sqrt(Sigma[1,1]*Sigma[2,2])
+set([u'Sigma'])
+multi_normal(mu,Sigma)
+multi_normal(mu,Sigma)
+multi_normal(mu,Sigma)
+indices:
+{u'n': True}
+/home/saikat/projects/c4pp/programs/templates/kidiq_interaction_z/kidiq_interaction_z.template
+/home/saikat/projects/c4pp/programs/templates/kidiq_interaction_z
+kidiq_interaction_z
+normal(beta[0]+beta[1]*z_mom_hs+beta[2]*z_mom_iq+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*z_mom_hs+beta[2]*z_mom_iq+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*z_mom_hs+beta[2]*z_mom_iq+beta[4]*inter,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/sesame_one_pred_b/sesame_one_pred_b.template
+/home/saikat/projects/c4pp/programs/templates/sesame_one_pred_b
+sesame_one_pred_b
+normal(beta[0]+beta[2]*encouraged,sigma)
+normal(beta[0]+beta[2]*encouraged,sigma)
+normal(beta[0]+beta[2]*encouraged,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_dae_inter/wells_dae_inter.template
+/home/saikat/projects/c4pp/programs/templates/wells_dae_inter
+wells_dae_inter
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[3]*educ4+beta[5]*inter)
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[3]*educ4+beta[5]*inter)
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[3]*educ4+beta[5]*inter)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_predicted_log/wells_predicted_log.template
+/home/saikat/projects/c4pp/programs/templates/wells_predicted_log
+wells_predicted_log
+pred[i]=inv_logit(beta[1]+beta[2]*c_distx100[i]+beta[3]*c_log_arsenic[i]+beta[4]*c_educ4[i]+beta[5]*da_inter[i]+beta[6]*de_inter[i]+beta[7]*ae_inter[i])
+set([u'c_educ4', u'c_log_arsenic', u'i', u'da_inter', u'beta', u'c_distx100', u'de_inter', u'ae_inter'])
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_log_arsenic+beta[3]*c_educ4+beta[4]*da_inter+beta[5]*de_inter+beta[7]*ae_inter)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_log_arsenic+beta[3]*c_educ4+beta[4]*da_inter+beta[5]*de_inter+beta[7]*ae_inter)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_log_arsenic+beta[3]*c_educ4+beta[4]*da_inter+beta[5]*de_inter+beta[7]*ae_inter)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/sesame_street1/sesame_street1.template
+/home/saikat/projects/c4pp/programs/templates/sesame_street1
+sesame_street1
+Sigma_yt[1,1]=pow(sigma_y,2)
+set([u'sigma_y'])
+Sigma_yt[2,2]=pow(sigma_t,2)
+set([u'sigma_t'])
+Sigma_yt[1,2]=rho_yt*sigma_y*sigma_t
+set([u'rho_yt', u'sigma_y', u'sigma_t'])
+Sigma_yt[2,1]=Sigma_yt[1,2]
+set([])
+Sigma_ag[1,1]=pow(sigma_a,2)
+set([u'sigma_a'])
+Sigma_ag[2,2]=pow(sigma_g,2)
+set([u'sigma_g'])
+Sigma_ag[1,2]=rho_ag*sigma_a*sigma_g
+set([u'rho_ag', u'sigma_g', u'sigma_a'])
+Sigma_ag[2,1]=Sigma_ag[1,2]
+set([])
+ag
+J,2
+indices:
+{u'J': True, u'j': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/grades/grades.template
+/home/saikat/projects/c4pp/programs/templates/grades
+grades
+normal(beta[0]+beta[2]*midterm,sigma)
+normal(beta[0]+beta[2]*midterm,sigma)
+normal(beta[0]+beta[2]*midterm,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/electric_1a_chr/electric_1a_chr.template
+/home/saikat/projects/c4pp/programs/templates/electric_1a_chr
+electric_1a_chr
+normal(y_hat,sigma_y_hat)
+normal(y_hat,sigma_y_hat)
+normal(y_hat,sigma_y_hat)
+indices:
+{u'i': True, u'grade_pair': True, u'N': True, u'grade': True, u'n_pair': True, u'pair': True}
+/home/saikat/projects/c4pp/programs/templates/electric_one_pred/electric_one_pred.template
+/home/saikat/projects/c4pp/programs/templates/electric_one_pred
+electric_one_pred
+normal(beta[0]+beta[2]*treatment,sigma)
+normal(beta[0]+beta[2]*treatment,sigma)
+normal(beta[0]+beta[2]*treatment,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_floor_chr/radon_vary_intercept_floor_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_floor_chr
+radon_vary_intercept_floor_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_b/radon_vary_intercept_b.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_b
+radon_vary_intercept_b
+u'a'
+a not found
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/normal_loc/normal_loc.template
+/home/saikat/projects/c4pp/programs/templates/normal_loc
+normal_loc
+normal(mu,1.0)
+normal(mu,1.0)
+normal(mu,1.0)
+indices:
+{u'n': True}
+/home/saikat/projects/c4pp/programs/templates/kidney/kidney.template
+/home/saikat/projects/c4pp/programs/templates/kidney
+kidney
+b
+NP
+weibull(r,exp(-(alpha+beta_age*age_uc[i]+beta_sex*sex_uc[i]+yabeta_disease[disease_uc[i]]+b[patient_uc[i]])/r))
+weibull(r,exp(-(alpha+beta_age*age_uc[i]+beta_sex*sex_uc[i]+yabeta_disease[disease_uc[i]]+b[patient_uc[i]])/r))
+weibull(r,exp(-(alpha+beta_age*age_uc[i]+beta_sex*sex_uc[i]+yabeta_disease[disease_uc[i]]+b[patient_uc[i]])/r))
+bernoulli(exp(-pow(t_rc[i]/exp(-(alpha+beta_age*age_rc[i]+beta_sex*sex_rc[i]+yabeta_disease[disease_rc[i]]+b[patient_rc[i]])/r),r)))
+bernoulli(exp(-pow(t_rc[i]/exp(-(alpha+beta_age*age_rc[i]+beta_sex*sex_rc[i]+yabeta_disease[disease_rc[i]]+b[patient_rc[i]])/r),r)))
+bernoulli(exp(-pow(t_rc[i]/exp(-(alpha+beta_age*age_rc[i]+beta_sex*sex_rc[i]+yabeta_disease[disease_rc[i]]+b[patient_rc[i]])/r),r)))
+indices:
+{u'N_rc': True, u'i': True, u'disease_uc': True, u'patient_uc': True, u'patient_rc': True, u'NP': True, u'N_uc': True, u'disease_rc': True}
+/home/saikat/projects/c4pp/programs/templates/magnesium/magnesium.template
+/home/saikat/projects/c4pp/programs/templates/magnesium
+magnesium
+OR[prior]=exp(mu[prior])
+set([u'mu', u'prior'])
+pc
+N_priors,N_studies
+theta
+N_priors,N_studies
+binomial(nc,pc[prior])
+binomial(nc,pc[prior])
+binomial_logit(nt,tmpm)
+binomial_logit(nt,tmpm)
+binomial_logit(nt,tmpm)
+binomial_logit(nt,tmpm)
+indices:
+{u'i': True, u'prior': True, u'N_priors': True, u'N_studies': True}
+/home/saikat/projects/c4pp/programs/templates/sorted_pair/sorted_pair.template
+/home/saikat/projects/c4pp/programs/templates/sorted_pair
+sorted_pair
+a=fmax(x1,x2)
+set([u'x2', u'x1'])
+b=fmin(x1,x2)
+set([u'x2', u'x1'])
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/ordered_pair/ordered_pair.template
+/home/saikat/projects/c4pp/programs/templates/ordered_pair
+ordered_pair
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_si_chr/radon_vary_si_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_si_chr
+radon_vary_si_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_inter_slope_17.1/radon_vary_inter_slope_17.1.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_inter_slope_17.1
+radon_vary_inter_slope_17
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+indices:
+{u'i': True, u'county': True, u'N': True}
+cp: cannot stat 'radon_vary_inter_slope_17.py': No such file or directory
+/home/saikat/projects/c4pp/programs/templates/rats_stanified/rats_stanified.template
+/home/saikat/projects/c4pp/programs/templates/rats_stanified
+rats_stanified
+irat=rat[n]
+set([u'rat', u'n'])
+alpha0=mu_alpha-xbar*mu_beta
+set([u'xbar', u'mu_beta', u'mu_alpha'])
+normal(alpha[irat]+beta[irat]*(x[n]-xbar),sigma_y)
+normal(alpha[irat]+beta[irat]*(x[n]-xbar),sigma_y)
+normal(alpha[irat]+beta[irat]*(x[n]-xbar),sigma_y)
+indices:
+{u'Npts': True, u'n': True, u'irat': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/stochastic-volatility-optimized/stochastic-volatility-optimized.template
+/home/saikat/projects/c4pp/programs/templates/stochastic-volatility-optimized
+stochastic-volatility-optimized
+indices:
+{u't': True}
+/home/saikat/projects/c4pp/programs/templates/radon_complete_pool/radon_complete_pool.template
+/home/saikat/projects/c4pp/programs/templates/radon_complete_pool
+radon_complete_pool
+normal(beta[0]+beta[2]*x,sigma)
+normal(beta[0]+beta[2]*x,sigma)
+normal(beta[0]+beta[2]*x,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_probit/wells_probit.template
+/home/saikat/projects/c4pp/programs/templates/wells_probit
+wells_probit
+bernoulli(Phi(beta[0]+beta[1]*distx100[n]))
+bernoulli(Phi(beta[0]+beta[1]*distx100[n]))
+bernoulli(Phi(beta[0]+beta[1]*distx100[n]))
+indices:
+{u'n': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/normal_truncated/normal_truncated.template
+/home/saikat/projects/c4pp/programs/templates/normal_truncated
+normal_truncated
+normal(mu,sigma)
+normal(mu,sigma)
+normal(mu,sigma)
+indices:
+{u'n': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_inter_vary_chr/radon_inter_vary_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_inter_vary_chr
+radon_inter_vary_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_d100ars/wells_d100ars.template
+/home/saikat/projects/c4pp/programs/templates/wells_d100ars
+wells_d100ars
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[3]*arsenic)
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[3]*arsenic)
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[3]*arsenic)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_redundant_chr/radon_redundant_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_redundant_chr
+radon_redundant_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/ideo_reparam/ideo_reparam.template
+/home/saikat/projects/c4pp/programs/templates/ideo_reparam
+ideo_reparam
+normal(beta[0]+beta[1]*party+beta[2]*z1+beta[4]*z2,sigma)
+normal(beta[0]+beta[1]*party+beta[2]*z1+beta[4]*z2,sigma)
+normal(beta[0]+beta[1]*party+beta[2]*z1+beta[4]*z2,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/hepatitis/hepatitis.template
+/home/saikat/projects/c4pp/programs/templates/hepatitis
+hepatitis
+indices:
+{u'N1': True, u'n': True, u'oldn': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_inter_vary/radon_inter_vary.template
+/home/saikat/projects/c4pp/programs/templates/radon_inter_vary
+radon_inter_vary
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/uniform/uniform.template
+/home/saikat/projects/c4pp/programs/templates/uniform
+uniform
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/wells_dae/wells_dae.template
+/home/saikat/projects/c4pp/programs/templates/wells_dae
+wells_dae
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[4]*educ4)
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[4]*educ4)
+bernoulli_logit(beta[0]+beta[1]*distx100+beta[2]*arsenic+beta[4]*educ4)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/beetles_cloglog/beetles_cloglog.template
+/home/saikat/projects/c4pp/programs/templates/beetles_cloglog
+beetles_cloglog
+alpha=alpha_star-beta*mean_x
+set([u'beta', u'mean_x', u'alpha_star'])
+llike[i]=r[i]*log(p[i])+(n[i]-r[i])*log(1-p[i])
+set([u'i', u'p', u'r', u'n'])
+rhat[i]=p[i]*n[i]
+set([u'i', u'p', u'n'])
+binomial(n,p)
+binomial(n,p)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_group_chr/radon_group_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_group_chr
+radon_group_chr
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/leuk0/leuk0.template
+/home/saikat/projects/c4pp/programs/templates/leuk0
+leuk0
+dL0
+NT
+poisson(Y[i,j]*exp(beta*Z[i])*dL0[j])
+poisson(Y[i,j]*exp(beta*Z[i])*dL0[j])
+poisson(Y[i,j]*exp(beta*Z[i])*dL0[j])
+indices:
+{u'i': True, u'j': True, u'NT': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/kidiq_interaction/kidiq_interaction.template
+/home/saikat/projects/c4pp/programs/templates/kidiq_interaction
+kidiq_interaction
+normal(beta[0]+beta[1]*mom_hs+beta[2]*mom_iq+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*mom_hs+beta[2]*mom_iq+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*mom_hs+beta[2]*mom_iq+beta[4]*inter,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_inter_slope_17.2/radon_vary_inter_slope_17.2.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_inter_slope_17.2
+radon_vary_inter_slope_17
+a_hat=g_a_0+g_a_1*u
+set([u'g_a_1', u'g_a_0', u'u'])
+b_hat=g_b_0+g_b_1*u
+set([u'u', u'g_b_0', u'g_b_1'])
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+indices:
+{u'i': True, u'county': True, u'J': True, u'N': True}
+cp: cannot stat 'radon_vary_inter_slope_17.py': No such file or directory
+/home/saikat/projects/c4pp/programs/templates/nes/nes.template
+/home/saikat/projects/c4pp/programs/templates/nes
+nes
+normal(beta[0]+beta[1]*real_ideo+beta[2]*race_adj+beta[3]*age30_44+beta[4]*age45_64+beta[5]*age65up+beta[6]*educ1+beta[7]*gender+beta[9]*income,sigma)
+normal(beta[0]+beta[1]*real_ideo+beta[2]*race_adj+beta[3]*age30_44+beta[4]*age45_64+beta[5]*age65up+beta[6]*educ1+beta[7]*gender+beta[9]*income,sigma)
+normal(beta[0]+beta[1]*real_ideo+beta[2]*race_adj+beta[3]*age30_44+beta[4]*age45_64+beta[5]*age65up+beta[6]*educ1+beta[7]*gender+beta[9]*income,sigma)
+indices:
+{u'n': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_si/radon_vary_si.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_si
+radon_vary_si
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/camel2/camel2.template
+/home/saikat/projects/c4pp/programs/templates/camel2
+camel2
+Y1=normal(0.0,sqrt(Sigma[1,1]))
+set([u'Sigma'])
+Y2=normal(0.0,sqrt(Sigma[2,2]))
+set([u'Sigma'])
+multi_normal(mu,Sigma)
+multi_normal(mu,Sigma)
+multi_normal(mu,Sigma)
+normal(0.0,sqrt(Sigma[1,1]))
+normal(0.0,sqrt(Sigma[2,2]))
+indices:
+{u'n': True}
+/home/saikat/projects/c4pp/programs/templates/radon_redundant/radon_redundant.template
+/home/saikat/projects/c4pp/programs/templates/radon_redundant
+radon_redundant
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/mark-recapture-3/mark-recapture-3.template
+/home/saikat/projects/c4pp/programs/templates/mark-recapture-3
+mark-recapture-3
+binomial(C,theta)
+binomial(C,theta)
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/electric_supp/electric_supp.template
+/home/saikat/projects/c4pp/programs/templates/electric_supp
+electric_supp
+normal(beta[0]+beta[1]*supp+beta[3]*pre_test,sigma)
+normal(beta[0]+beta[1]*supp+beta[3]*pre_test,sigma)
+normal(beta[0]+beta[1]*supp+beta[3]*pre_test,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/mr_ss/mr_ss.template
+/home/saikat/projects/c4pp/programs/templates/mr_ss
+mr_ss
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/radon.nopooling/radon.nopooling.template
+/home/saikat/projects/c4pp/programs/templates/radon.nopooling
+radon
+normal(a[county[i]]+b*x[i],sigma_y)
+normal(a[county[i]]+b*x[i],sigma_y)
+normal(a[county[i]]+b*x[i],sigma_y)
+indices:
+{u'county': True, u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/kidscore_momhs/kidscore_momhs.template
+/home/saikat/projects/c4pp/programs/templates/kidscore_momhs
+kidscore_momhs
+normal(beta[0]+beta[2]*mom_hs,sigma)
+normal(beta[0]+beta[2]*mom_hs,sigma)
+normal(beta[0]+beta[2]*mom_hs,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/arma11/arma11.template
+/home/saikat/projects/c4pp/programs/templates/arma11
+arma11
+nu[1]=mu+phi*mu
+set([u'mu', u'phi'])
+err[1]=y[1]-nu[1]
+set([u'y', u'nu'])
+normal(0.0,sigma)
+normal(0.0,sigma)
+normal(0.0,sigma)
+indices:
+{u'T': True, u't': True}
+/home/saikat/projects/c4pp/programs/templates/electric_inter/electric_inter.template
+/home/saikat/projects/c4pp/programs/templates/electric_inter
+electric_inter
+normal(beta[0]+beta[1]*treatment+beta[2]*pre_test+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*treatment+beta[2]*pre_test+beta[4]*inter,sigma)
+normal(beta[0]+beta[1]*treatment+beta[2]*pre_test+beta[4]*inter,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_no_pool/radon_no_pool.template
+/home/saikat/projects/c4pp/programs/templates/radon_no_pool
+radon_no_pool
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/funnel/funnel.template
+/home/saikat/projects/c4pp/programs/templates/funnel
+funnel
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/kidscore_momwork/kidscore_momwork.template
+/home/saikat/projects/c4pp/programs/templates/kidscore_momwork
+kidscore_momwork
+normal(beta[0]+beta[1]*work2+beta[2]*work3+beta[4]*work4,sigma)
+normal(beta[0]+beta[1]*work2+beta[2]*work3+beta[4]*work4,sigma)
+normal(beta[0]+beta[1]*work2+beta[2]*work3+beta[4]*work4,sigma)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/naive-bayes/naive-bayes.template
+/home/saikat/projects/c4pp/programs/templates/naive-bayes
+naive-bayes
+phi
+K,V
+categorical(theta)
+categorical(theta)
+categorical(theta)
+categorical(phi[z[doc[n]]])
+categorical(phi[z[doc[n]]])
+categorical(phi[z[doc[n]]])
+indices:
+{u'M': True, u'K': True, u'm': True, u'N': True, u'doc': True, u'V': True, u'n': True, u'z': True, u'k': True}
+/home/saikat/projects/c4pp/programs/templates/irt2_multilevel/irt2_multilevel.template
+/home/saikat/projects/c4pp/programs/templates/irt2_multilevel
+irt2_multilevel
+bernoulli_logit(exp(log_gamma[kk[n]])*(alpha[jj[n]]-beta[kk[n]]+delta))
+bernoulli_logit(exp(log_gamma[kk[n]])*(alpha[jj[n]]-beta[kk[n]]+delta))
+bernoulli_logit(exp(log_gamma[kk[n]])*(alpha[jj[n]]-beta[kk[n]]+delta))
+indices:
+{u'kk': True, u'K': True, u'J': True, u'n': True, u'jj': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/wells_interaction_c/wells_interaction_c.template
+/home/saikat/projects/c4pp/programs/templates/wells_interaction_c
+wells_interaction_c
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[4]*inter)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[4]*inter)
+bernoulli_logit(beta[0]+beta[1]*c_distx100+beta[2]*c_arsenic+beta[4]*inter)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_floor2/radon_vary_intercept_floor2.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_floor2
+radon_vary_intercept_floor2
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/triangle/triangle.template
+/home/saikat/projects/c4pp/programs/templates/triangle
+triangle
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/mark-recapture-2/mark-recapture-2.template
+/home/saikat/projects/c4pp/programs/templates/mark-recapture-2
+mark-recapture-2
+N=M/theta
+set([u'theta', u'M'])
+binomial(C,theta)
+binomial(C,theta)
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/seeds_stanified/seeds_stanified.template
+/home/saikat/projects/c4pp/programs/templates/seeds_stanified
+seeds_stanified
+binomial_logit(N,alpha0+alpha1*x1+alpha2*x2+alpha12*x1x2+b)
+binomial_logit(N,alpha0+alpha1*x1+alpha2*x2+alpha12*x1x2+b)
+indices:
+{u'I': True}
+/home/saikat/projects/c4pp/programs/templates/circle/circle.template
+/home/saikat/projects/c4pp/programs/templates/circle
+circle
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/kidscore_momiq/kidscore_momiq.template
+/home/saikat/projects/c4pp/programs/templates/kidscore_momiq
+kidscore_momiq
+normal(beta[0]+beta[2]*mom_iq,sigma)
+normal(beta[0]+beta[2]*mom_iq,sigma)
+normal(beta[0]+beta[2]*mom_iq,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/estdof/estdof.template
+/home/saikat/projects/c4pp/programs/templates/estdof
+estdof
+student_t(d,0.0,1.0)
+student_t(d,0.0,1.0)
+student_t(d,0.0,1.0)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/litter/litter.template
+/home/saikat/projects/c4pp/programs/templates/litter
+litter
+theta[g]=1/(a[g]+b[g])
+set([u'a', u'b', u'g'])
+p
+G,N
+binomial(n[g,i],p[g,i])
+binomial(n[g,i],p[g,i])
+indices:
+{u'i': True, u'g': True}
+/home/saikat/projects/c4pp/programs/templates/radon_intercept_chr/radon_intercept_chr.template
+/home/saikat/projects/c4pp/programs/templates/radon_intercept_chr
+radon_intercept_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/mark-recapture/mark-recapture.template
+/home/saikat/projects/c4pp/programs/templates/mark-recapture
+mark-recapture
+binomial(C,M/N)
+binomial(C,M/N)
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/mesquite_va/mesquite_va.template
+/home/saikat/projects/c4pp/programs/templates/mesquite_va
+mesquite_va
+log_weight=normal<N>(beta[0]+beta[1]*log_canopy_volume+beta[2]*log_canopy_area+beta[4]*group,sigma)
+set([u'group', u'N', u'beta', u'log_canopy_area', u'sigma', u'log_canopy_volume'])
+normal<N>(beta[0]+beta[1]*log_canopy_volume+beta[2]*log_canopy_area+beta[4]*group,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/log10earn_height/log10earn_height.template
+/home/saikat/projects/c4pp/programs/templates/log10earn_height
+log10earn_height
+log10_earn=normal<N>(beta[0]+beta[2]*height,sigma)
+set([u'beta', u'height', u'sigma', u'N'])
+normal<N>(beta[0]+beta[2]*height,sigma)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/multi-logit/multi-logit.template
+/home/saikat/projects/c4pp/programs/templates/multi-logit
+multi-logit
+gamma=x*beta'
+set([u'x', u'beta'])
+cauchy(0.0,2.5)
+cauchy(0.0,2.5)
+cauchy(0.0,2.5)
+categorical_logit(gamma[n]')
+categorical_logit(gamma[n]')
+categorical_logit(gamma[n]')
+indices:
+{u'n': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/normal_mixture/normal_mixture.template
+/home/saikat/projects/c4pp/programs/templates/normal_mixture
+normal_mixture
+mu
+2
+indices:
+{u'k': True, u'n': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/nnmf/nnmf.template
+/home/saikat/projects/c4pp/programs/templates/nnmf
+nnmf
+G
+T,K
+F
+K,I
+normal(mu,sigma[i])
+normal(mu,sigma[i])
+normal(mu,sigma[i])
+indices:
+{u'I': True, u'i': True, u'k': True, u'K': True, u't': True}
+/home/saikat/projects/c4pp/programs/templates/earnings_vary_si/earnings_vary_si.template
+/home/saikat/projects/c4pp/programs/templates/earnings_vary_si
+earnings_vary_si
+log_earn=normal<N>(y_hat,sigma_y)
+set([u'sigma_y', u'y_hat', u'N'])
+normal<N>(y_hat,sigma_y)
+indices:
+{u'i': True, u'eth': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/mesquite_vash/mesquite_vash.template
+/home/saikat/projects/c4pp/programs/templates/mesquite_vash
+mesquite_vash
+log_weight=normal<N>(beta[0]+beta[1]*log_canopy_volume+beta[2]*log_canopy_area+beta[3]*log_canopy_shape+beta[4]*log_total_height+beta[6]*group,sigma)
+set([u'log_canopy_area', u'log_total_height', u'log_canopy_shape', u'beta', u'group', u'N', u'sigma', u'log_canopy_volume'])
+normal<N>(beta[0]+beta[1]*log_canopy_volume+beta[2]*log_canopy_area+beta[3]*log_canopy_shape+beta[4]*log_total_height+beta[6]*group,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/cervix2/cervix2.template
+/home/saikat/projects/c4pp/programs/templates/cervix2
+cervix2
+gamma1=1/(1+(1+exp(beta0C+beta))/(1+exp(beta0C))*(1-q)/q)
+set([u'q', u'beta', u'beta0C'])
+gamma2=1/(1+(1+exp(-beta0C-beta))/(1+exp(-beta0C))*(1-q)/q)
+set([u'q', u'beta', u'beta0C'])
+phi
+2,2
+bernoulli(q)
+bernoulli(q)
+bernoulli(q)
+bernoulli_logit(beta0C+beta*xc[n])
+bernoulli_logit(beta0C+beta*xc[n])
+bernoulli_logit(beta0C+beta*xc[n])
+bernoulli(phi[xc[n]+1,dc[n]+1])
+bernoulli(phi[xc[n]+1,dc[n]+1])
+bernoulli(phi[xc[n]+1,dc[n]+1])
+bernoulli(inv_logit(beta0C+beta)*q+inv_logit(beta0C)*(1-q))
+bernoulli(inv_logit(beta0C+beta)*q+inv_logit(beta0C)*(1-q))
+bernoulli(inv_logit(beta0C+beta)*q+inv_logit(beta0C)*(1-q))
+bernoulli(phi[1,di[n]+1]*(1-q)+phi[2,di[n]+1]*q)
+bernoulli(phi[1,di[n]+1]*(1-q)+phi[2,di[n]+1]*q)
+bernoulli(phi[1,di[n]+1]*(1-q)+phi[2,di[n]+1]*q)
+indices:
+{u'Ni': True, u'j': True, u'di': True, u'i': True, u'xc': True, u'Nc': True, u'n': True}
+/home/saikat/projects/c4pp/programs/templates/irt/irt.template
+/home/saikat/projects/c4pp/programs/templates/irt
+irt
+bernoulli_logit(alpha[jj[n]]-beta[kk[n]]+delta)
+bernoulli_logit(alpha[jj[n]]-beta[kk[n]]+delta)
+bernoulli_logit(alpha[jj[n]]-beta[kk[n]]+delta)
+indices:
+{u'kk': True, u'K': True, u'J': True, u'n': True, u'jj': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/anova_radon_nopred/anova_radon_nopred.template
+/home/saikat/projects/c4pp/programs/templates/anova_radon_nopred
+anova_radon_nopred
+e_y=y-y_hat
+set([u'y', u'y_hat'])
+s_a=sd(a)
+set([u'a'])
+s_y=sd(e_y)
+set([u'e_y'])
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_floor/radon_vary_intercept_floor.template
+/home/saikat/projects/c4pp/programs/templates/radon_vary_intercept_floor
+radon_vary_intercept_floor
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'county': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/hiv/hiv.template
+/home/saikat/projects/c4pp/programs/templates/hiv
+hiv
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'person': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/bernoulli/bernoulli.template
+/home/saikat/projects/c4pp/programs/templates/bernoulli
+bernoulli
+bernoulli(theta)
+bernoulli(theta)
+bernoulli(theta)
+indices:
+{u'n': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/electric_chr/electric_chr.template
+/home/saikat/projects/c4pp/programs/templates/electric_chr
+electric_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'pair': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/logearn_height_male/logearn_height_male.template
+/home/saikat/projects/c4pp/programs/templates/logearn_height_male
+logearn_height_male
+log_earn=normal<N>(beta[0]+beta[1]*height+beta[3]*male,sigma)
+set([u'height', u'beta', u'male', u'sigma', u'N'])
+normal<N>(beta[0]+beta[1]*height+beta[3]*male,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/logearn_height/logearn_height.template
+/home/saikat/projects/c4pp/programs/templates/logearn_height
+logearn_height
+log_earn=normal<N>(beta[0]+beta[2]*height,sigma)
+set([u'beta', u'height', u'sigma', u'N'])
+normal<N>(beta[0]+beta[2]*height,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/pilots_expansion/pilots_expansion.template
+/home/saikat/projects/c4pp/programs/templates/pilots_expansion
+pilots_expansion
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'airport': True, u'treatment': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/beetles_logit/beetles_logit.template
+/home/saikat/projects/c4pp/programs/templates/beetles_logit
+beetles_logit
+p[i]=inv_logit(m[i])
+set([u'i', u'm'])
+llike[i]=r[i]*log(p[i])+(n[i]-r[i])*log(1-p[i])
+set([u'i', u'p', u'r', u'n'])
+rhat[i]=p[i]*n[i]
+set([u'i', u'p', u'n'])
+alpha=alpha_star-beta*mean_x
+set([u'beta', u'mean_x', u'alpha_star'])
+binomial_logit(n,m)
+binomial_logit(n,m)
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/dugongs/dugongs.template
+/home/saikat/projects/c4pp/programs/templates/dugongs
+dugongs
+indices:
+{u'i': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/cjs-K/cjs-K.template
+/home/saikat/projects/c4pp/programs/templates/cjs-K
+cjs-K
+indices:
+{u'i': True, u'k': True, u'K': True}
+/home/saikat/projects/c4pp/programs/templates/unemployment/unemployment.template
+/home/saikat/projects/c4pp/programs/templates/unemployment
+unemployment
+normal(beta[0]+beta[2]*y_lag,sigma)
+normal(beta[0]+beta[2]*y_lag,sigma)
+normal(beta[0]+beta[2]*y_lag,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/hiv_chr/hiv_chr.template
+/home/saikat/projects/c4pp/programs/templates/hiv_chr
+hiv_chr
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'person': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/earnings_latin_square/earnings_latin_square.template
+/home/saikat/projects/c4pp/programs/templates/earnings_latin_square
+earnings_latin_square
+c
+n_eth,n_age
+d
+n_eth,n_age
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+normal(y_hat,sigma_y)
+indices:
+{u'i': True, u'eth': True, u'age': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/eyes/eyes.template
+/home/saikat/projects/c4pp/programs/templates/eyes
+eyes
+log_p1=log(p1)
+set([u'p1'])
+log1m_p1=log1m(p1)
+set([u'p1'])
+indices:
+{u'n': True, u'N': True}
+/home/saikat/projects/c4pp/programs/templates/funnel_reparam/funnel_reparam.template
+/home/saikat/projects/c4pp/programs/templates/funnel_reparam
+funnel_reparam
+indices:
+{}
+/home/saikat/projects/c4pp/programs/templates/leukfr0/leukfr0.template
+/home/saikat/projects/c4pp/programs/templates/leukfr0
+leukfr0
+b
+Npair
+dL0
+NT
+poisson(Y[i,j]*exp(beta*Z[i]+b[pair[i]])*dL0[j])
+poisson(Y[i,j]*exp(beta*Z[i]+b[pair[i]])*dL0[j])
+poisson(Y[i,j]*exp(beta*Z[i]+b[pair[i]])*dL0[j])
+indices:
+{u'i': True, u'k': True, u'j': True, u'N': True, u'pair': True, u'Npair': True, u'NT': True}
+/home/saikat/projects/c4pp/programs/templates/congress/congress.template
+/home/saikat/projects/c4pp/programs/templates/congress
+congress
+normal(beta[0]+beta[1]*vote_86+beta[3]*incumbency_88,sigma)
+normal(beta[0]+beta[1]*vote_86+beta[3]*incumbency_88,sigma)
+normal(beta[0]+beta[1]*vote_86+beta[3]*incumbency_88,sigma)
+indices:
+{u'N': True}
+/home/saikat/projects/c4pp/programs/templates/radon_correlation_17.1/radon_correlation_17.1.template
+/home/saikat/projects/c4pp/programs/templates/radon_correlation_17.1
+radon_correlation_17
+Sigma_b[1,1]=pow(sigma_a,2)
+set([u'sigma_a'])
+Sigma_b[2,2]=pow(sigma_b,2)
+set([u'sigma_b'])
+Sigma_b[1,2]=rho*sigma_a*sigma_b
+set([u'sigma_b', u'sigma_a', u'rho'])
+Sigma_b[2,1]=Sigma_b[1,2]
+set([])
+B_hat[1,j]=mu_a
+set([u'j', u'mu_a'])
+B_hat[2,j]=mu_b
+set([u'j', u'mu_b'])
+B_hat_temp[1]=mu_a
+set([u'mu_a'])
+B_hat_temp[2]=mu_b
+set([u'mu_b'])
+B[1,j]=B_temp[1]
+set([u'B_temp', u'j'])
+B[2,j]=B_temp[2]
+set([u'B_temp', u'j'])
+a[j]=B[1,j]
+set([u'B', u'j'])
+b[j]=B[2,j]
+set([u'B', u'j'])
+y_hat[i]=a[county[i]]+b[county[i]]*x[i]
+set([u'a', u'i', u'b', u'county', u'x'])
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+normal(y_hat,sigma)
+indices:
+{u'i': True, u'county': True, u'j': True, u'N': True}
+cp: cannot stat 'radon_correlation_17.py': No such file or directory

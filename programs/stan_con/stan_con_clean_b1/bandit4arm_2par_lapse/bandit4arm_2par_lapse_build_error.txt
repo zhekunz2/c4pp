@@ -1,0 +1,22 @@
+
+--- Translating Stan model to C++ code ---
+bin/stanc  bandit4arm_2par_lapse/bandit4arm_2par_lapse.stan --o=bandit4arm_2par_lapse/bandit4arm_2par_lapse.hpp
+Model name=bandit4arm_2par_lapse_model
+Input file=bandit4arm_2par_lapse/bandit4arm_2par_lapse.stan
+Output file=bandit4arm_2par_lapse/bandit4arm_2par_lapse.hpp
+
+SYNTAX ERROR, MESSAGE(S) FROM PARSER:
+
+  error in 'bandit4arm_2par_lapse/bandit4arm_2par_lapse.stan' at line 88, column 11
+  -------------------------------------------------
+    86: 
+    87:       // First, update Qr & Qp for all decks w/ fictive updating
+    88:       Qr += Arew[i] * PEr_fic;
+                  ^
+    89:       Qp += Apun[i] * PEp_fic;
+  -------------------------------------------------
+
+PARSER EXPECTED: <expression>
+
+make/models:20: recipe for target 'bandit4arm_2par_lapse/bandit4arm_2par_lapse.hpp' failed
+make: *** [bandit4arm_2par_lapse/bandit4arm_2par_lapse.hpp] Error 253

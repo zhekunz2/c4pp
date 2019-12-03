@@ -1,0 +1,11 @@
+modelCheck('cervix2model.txt')
+modelData('cervix2data.txt')
+modelCompile(1)
+modelInits('cervix2inits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

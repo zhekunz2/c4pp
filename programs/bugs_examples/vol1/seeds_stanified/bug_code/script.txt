@@ -1,0 +1,11 @@
+modelCheck('seeds_stanifiedmodel.txt')
+modelData('seeds_stanifieddata.txt')
+modelCompile(1)
+modelInits('seeds_stanifiedinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

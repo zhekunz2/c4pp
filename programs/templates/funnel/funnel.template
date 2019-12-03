@@ -1,0 +1,5 @@
+dummy : 0
+y := normal(0.0,3.0)
+x := normal<9>(0.0,exp(y/2))
+posterior(y)
+posterior(x)

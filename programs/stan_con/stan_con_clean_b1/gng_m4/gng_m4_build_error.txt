@@ -1,0 +1,22 @@
+
+--- Translating Stan model to C++ code ---
+bin/stanc  gng_m4/gng_m4.stan --o=gng_m4/gng_m4.hpp
+Model name=gng_m4_model
+Input file=gng_m4/gng_m4.stan
+Output file=gng_m4/gng_m4.hpp
+
+SYNTAX ERROR, MESSAGE(S) FROM PARSER:
+
+  error in 'gng_m4/gng_m4.stan' at line 86, column 27
+  -------------------------------------------------
+    84:       pGo[cue[i, t]]   = inv_logit(wv_g[cue[i, t]] - wv_ng[cue[i, t]]);
+    85:       {  // noise
+    86:         pGo[cue[i, t]]   *= (1 - xi[i]);
+                                  ^
+    87:         pGo[cue[i, t]]   += xi[i]/2;
+  -------------------------------------------------
+
+PARSER EXPECTED: <expression>
+
+make/models:20: recipe for target 'gng_m4/gng_m4.hpp' failed
+make: *** [gng_m4/gng_m4.hpp] Error 253

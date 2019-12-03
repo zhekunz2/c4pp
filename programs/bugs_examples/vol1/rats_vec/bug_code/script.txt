@@ -1,0 +1,11 @@
+modelCheck('rats_vecmodel.txt')
+modelData('rats_vecdata.txt')
+modelCompile(1)
+modelInits('rats_vecinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

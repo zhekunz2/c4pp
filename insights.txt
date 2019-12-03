@@ -1,0 +1,45 @@
+/home/saikat/projects/c4pp/programs/lrm_mutant_7/progs20190331-193958502206/progs20190331-193958502206_prob_rand_59
+convergence > 1.5
+results:/home/saikat/projects/grammars/src/test/resources/scripts/cmdstan-2.19.1/kidscore_momwork
+reason: beta1,2,3 unused!
+
+/home/saikat/projects/c4pp/programs/lrm_mutant_7/progs20190331-205646326686/progs20190331-205646326686_prob_rand_83
+/home/saikat/projects/grammars/src/test/resources/scripts/cmdstan-2.19.1/mesquite_vas
+convergence > 1.5
+reason: rep_vector, replacing with constants... not linear regression anymore?
+
+mixture
+1. progs20190404-003947473630_prob_rand_105
+removed increment log prob in else branch.. if branch is always false... target density is not
+
+2. progs20190404-003947473630_prob_rand_106
+removed loop!
+
+
+
+==================================================================
+7/6
+timeseries 7
+>>>>>progs20190621-205408227197_prob_rand_196
+fx_factor: fiddling with gaussian_dlm_obs makes the model unstable.. especially when a new parameter is added without limits
+only 62 models worked.
+higher data size 120K
+var_min is incorrect, but shows that variance depends on non-constant values perhaps
+
+some weights
+sample :: [ 0.07410396 -0.07410396]
+data_size :: [ 0.06992938 -0.06992938]
+var_min :: [ 0.0498148 -0.0498148]
+d_gaussian_dlm_obs :: [ 0.04566199 -0.04566199]
+dependent_prior :: [-0.04004964  0.04004964]
+d_matrix :: [ 0.03569979 -0.03569979]
+gaussian_dlm_obs :: [ 0.03332393 -0.03332393]
+arithops :: [-0.03086748  0.03086748]
+g_mean_in_degree :: [ 0.03006981 -0.03006981]
+real :: [-0.02789157  0.02789157]
+param :: [-0.02516914  0.02516914]
+matrix :: [ 0.02326618 -0.02326618]
+
+
+>>>>>progs20190621-212844701711_prob_rand_554
+

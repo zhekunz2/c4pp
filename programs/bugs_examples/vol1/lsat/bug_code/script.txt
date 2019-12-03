@@ -1,0 +1,11 @@
+modelCheck('lsatmodel.txt')
+modelData('lsatdata.txt')
+modelCompile(1)
+modelInits('lsatinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

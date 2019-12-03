@@ -1,0 +1,11 @@
+modelCheck('salmmodel.txt')
+modelData('salmdata.txt')
+modelCompile(1)
+modelInits('salminits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

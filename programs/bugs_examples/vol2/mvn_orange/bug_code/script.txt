@@ -1,0 +1,11 @@
+modelCheck('mvn_orangemodel.txt')
+modelData('mvn_orangedata.txt')
+modelCompile(1)
+modelInits('mvn_orangeinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

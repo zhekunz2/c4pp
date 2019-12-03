@@ -1,0 +1,11 @@
+modelCheck('beetles_cloglogmodel.txt')
+modelData('beetles_cloglogdata.txt')
+modelCompile(1)
+modelInits('beetles_clogloginits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

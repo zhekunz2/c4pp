@@ -1,0 +1,9 @@
+dummy : 0
+x := normal(1234.0,1234.0)<lower=0,upper=1>
+y_raw := normal(1234.0,1234.0)<lower=0,upper=1>
+transformedparam{
+    float<lower=-1,upper=1> y
+    y = y_raw-x
+}
+posterior(x)
+posterior(y_raw)

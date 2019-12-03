@@ -1,0 +1,25 @@
+y : [529.0, 530.0, 532.0, 533.1, 533.4, 533.6, 533.7, 534.1, 534.8, 535.3, 535.4, 535.9, 536.1, 536.3, 536.4, 536.6, 537.0, 537.4, 537.5, 538.3, 538.5, 538.6, 539.4, 539.6, 540.4, 540.8, 542.0, 542.8, 543.0, 543.5, 543.8, 543.9, 545.3, 546.2, 548.8, 548.7, 548.9, 549.0, 549.4, 549.9, 550.6, 551.2, 551.4, 551.5, 551.6, 552.8, 552.9, 553.2][N]
+N : 48
+p1 := normal(1234.0,1234.0)<lower=0,upper=1>
+transformedparam{
+    float lambdax[2]
+    float sigma
+    sigma = sqrt(sigmasq)
+    lambdax[1] = lambdax_1
+    lambdax[2] = lambdax[1]+theta
+}
+float log_p1
+float log1m_p1
+theta := normal(0.0,100.0)<lower=0>
+lambdax_1 := normal(0.0,1000.0)
+sigmasq := invgamma(0.001,0.001)<lower=0>
+log_p1 = log(p1)
+log1m_p1 = log1m(p1)
+for(n in 1:N)
+{
+    increment_log_prob(log_sum_exp(log_p1+normal_log(y[n],lambdax[1],sigma),log1m_p1+normal_log(y[n],lambdax[2],sigma)))
+}
+posterior(theta)
+posterior(p1)
+posterior(lambdax_1)
+posterior(sigmasq)

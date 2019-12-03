@@ -1,0 +1,11 @@
+modelCheck('hepatitismemodel.txt')
+modelData('hepatitismedata.txt')
+modelCompile(1)
+modelInits('hepatitismeinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

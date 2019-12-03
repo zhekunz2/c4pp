@@ -1,0 +1,63 @@
+dummy : 0
+transformeddata{
+    vector[2] mu
+    matrix[2,2] S
+    mu[1] = 0
+    mu[2] = 0
+    S[1,1] = 1000
+    S[1,2] = 0
+    S[2,1] = 0
+    S[2,2] = 1000
+}
+vector[2] Y[12]
+y121 := normal(1234.0,1234.0)
+y91 := normal(1234.0,1234.0)
+y72 := normal(1234.0,1234.0)
+y62 := normal(1234.0,1234.0)
+y82 := normal(1234.0,1234.0)
+y52 := normal(1234.0,1234.0)
+y101 := normal(1234.0,1234.0)
+y111 := normal(1234.0,1234.0)
+Sigma := normal<2, 2>(1234.0,1234.0)
+Y[1,1] = 1
+Y[1,2] = 1
+Y[2,1] = 1
+Y[2,2] = -1
+Y[3,1] = -1
+Y[3,2] = 1
+Y[4,1] = -1
+Y[4,2] = -1
+Y[5,1] = 2
+Y[6,1] = 2
+Y[7,1] = -2
+Y[8,1] = -2
+Y[5,2] = y52
+Y[6,2] = y62
+Y[7,2] = y72
+Y[8,2] = y82
+Y[9,1] = y91
+Y[10,1] = y101
+Y[11,1] = y111
+Y[12,1] = y121
+Y[9,2] = 2
+Y[10,2] = 2
+Y[11,2] = -2
+Y[12,2] = -2
+increment_log_prob(-1.5*log(determinant(Sigma)))
+for(n in 1:12)
+{
+    observe(multi_normal(mu,Sigma),Y[n])
+}
+generatedquantities{
+    float<lower=-1,upper=1> rho
+    rho = Sigma[1,2]/sqrt(Sigma[1,1]*Sigma[2,2])
+}
+posterior(y121)
+posterior(y91)
+posterior(y72)
+posterior(y62)
+posterior(y82)
+posterior(y52)
+posterior(y101)
+posterior(y111)
+posterior(Sigma)

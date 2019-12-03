@@ -1,0 +1,43 @@
+dummy : 0
+transformeddata{
+    vector[2] Y[4]
+    float Y1[4]
+    float Y2[4]
+    vector[2] mu
+    matrix[2,2] S
+    mu[1] = 0
+    mu[2] = 0
+    S[1,1] = 1000
+    S[1,2] = 0
+    S[2,1] = 0
+    S[2,2] = 1000
+    Y[1,1] = 1.0
+    Y[1,2] = 1.0
+    Y[2,1] = 1.0
+    Y[2,2] = -1.0
+    Y[3,1] = -1.0
+    Y[3,2] = 1.0
+    Y[4,1] = -1.0
+    Y[4,2] = -1.0
+    Y1[1] = 2.0
+    Y1[2] = 2.0
+    Y1[3] = -2.0
+    Y1[4] = -2.0
+    Y2[1] = 2.0
+    Y2[2] = 2.0
+    Y2[3] = -2.0
+    Y2[4] = -2.0
+}
+Sigma := normal<2, 2>(1234.0,1234.0)
+transformedparam{
+    float<lower=-1,upper=1> rho
+    rho = Sigma[1,2]/sqrt(Sigma[1,1]*Sigma[2,2])
+}
+for(n in 1:4)
+{
+    observe(multi_normal(mu,Sigma),Y[n])
+}
+observe(normal(0.0,sqrt(Sigma[1,1])), Y1)
+observe(normal(0.0,sqrt(Sigma[2,2])), Y2)
+increment_log_prob(-1.5*log(determinant(Sigma)))
+posterior(Sigma)

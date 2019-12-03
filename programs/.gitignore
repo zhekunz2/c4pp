@@ -1,0 +1,17 @@
+pplout*
+.DS_Store
+cached*
+*.pdf
+script2.txt
+temp.json
+gen
+data
+data.json
+temp
+bugs_examples/**/*tmp
+bugs_examples/**/*out
+bugs_examples/**/CODA*
+*.png
+lrm*
+timeseries*
+mixture*

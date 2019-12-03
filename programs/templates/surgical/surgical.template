@@ -1,0 +1,23 @@
+N : 12
+r : [0, 18, 8, 46, 8, 13, 9, 31, 14, 8, 29, 24][N]
+n : [47, 148, 119, 810, 211, 196, 148, 215, 207, 97, 256, 360][N]
+transformedparam{
+    float<lower=0> sigma
+    float<lower=0,upper=1> p[N]
+    sigma = sqrt(sigmasq)
+    for(i in 1:N)
+    {
+        p[i] = inv_logit(b[i])
+    }
+}
+mu := normal(0.0,1000.0)
+sigmasq := invgamma(0.001,0.001)<lower=0>
+b := normal(mu,sigma)[N]
+observe(binomial_logit(n,b),r)
+generatedquantities{
+    float pop_mean
+    pop_mean = inv_logit(mu)
+}
+posterior(mu)
+posterior(b)
+posterior(sigmasq)

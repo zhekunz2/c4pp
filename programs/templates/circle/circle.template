@@ -1,0 +1,5 @@
+dummy : 0
+y := normal(1234.0,1234.0)<lower=-sqrt(1-square(x)),upper=sqrt(1-square(x))>
+x := normal(1234.0,1234.0)<lower=-1,upper=1>
+posterior(y)
+posterior(x)

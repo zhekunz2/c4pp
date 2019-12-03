@@ -1,0 +1,32 @@
+n_groups : 5
+scenario_id : [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8][N]
+N : 40
+n_scenarios : 8
+y : <0.375, 0.0, 0.375, 0.0, 0.333333333333, 1.0, 0.125, 1.0, 0.25, 0.0, 0.5, 0.125, 0.5, 1.0, 0.125, 0.857142857143, 0.5, 0.666666666667, 0.333333333333, 0.0, 0.142857142857, 1.0, 0.0, 1.0, 0.142857142857, 0.0, 0.714285714286, 0.0, 0.285714285714, 1.0, 0.142857142857, 1.0, 0.428571428571, 0.0, 0.285714285714, 0.857142857143, 0.857142857143, 0.857142857143, 0.142857142857, 0.75>[N]
+group_id : [1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5][N]
+sigma_y := normal(1234.0,1234.0)<lower=0,upper=100>
+sigma_b := normal(1234.0,1234.0)<lower=0,upper=100>
+sigma_a := normal(1234.0,1234.0)<lower=0,upper=100>
+transformedparam{
+    vector[N] y_hat
+    vector[n_groups] a
+    vector[n_scenarios] b
+    a = 10*mu_a+eta_a*sigma_a
+    b = 10*mu_b+eta_b*sigma_b
+    for(i in 1:N)
+    {
+        y_hat[i] = a[group_id[i]]+b[scenario_id[i]]
+    }
+}
+mu_a := normal(0.0,1.0)
+eta_a := normal<n_groups>(0.0,1.0)
+mu_b := normal(0.0,1.0)
+eta_b := normal<n_scenarios>(0.0,1.0)
+observe(normal(y_hat,sigma_y),y)
+posterior(sigma_y)
+posterior(eta_a)
+posterior(eta_b)
+posterior(sigma_b)
+posterior(sigma_a)
+posterior(mu_b)
+posterior(mu_a)

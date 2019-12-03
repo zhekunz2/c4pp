@@ -1,0 +1,11 @@
+modelCheck('camel2model.txt')
+modelData('camel2data.txt')
+modelCompile(1)
+modelInits('camel2inits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

@@ -1,0 +1,12 @@
+dummy : 0
+y_raw := normal(1234.0,1234.0)<lower=-(1-sqrt(1-square(1-fabs(x_raw)))),upper=(1-sqrt(1-square(1-fabs(x_raw))))>
+x_raw := normal(1234.0,1234.0)<lower=-1,upper=1>
+transformedparam{
+    float<lower=-1,upper=1> x
+    float<lower=-1,upper=1> y
+    x = if_else(x_raw>0,1,-1)-x_raw
+    y = if_else(y_raw>0,1,-1)-y_raw
+}
+increment_log_prob(log1m(sqrt(1-square(1-fabs(x_raw)))))
+posterior(y_raw)
+posterior(x_raw)

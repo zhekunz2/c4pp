@@ -1,0 +1,11 @@
+modelCheck('seeds_centeredmodel.txt')
+modelData('seeds_centereddata.txt')
+modelCompile(1)
+modelInits('seeds_centeredinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

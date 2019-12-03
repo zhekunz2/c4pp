@@ -1,0 +1,15 @@
+C : 15
+R : 5
+M : 10
+transformeddata{
+    float theta_max
+    theta_max = M
+    theta_max = theta_max/(C-R+M)
+}
+theta := normal(1234.0,1234.0)<lower=0,upper=theta_max>
+observe(binomial(C,theta),R)
+generatedquantities{
+    float<lower=(C-R+M)> N
+    N = M/theta
+}
+posterior(theta)

@@ -1,0 +1,11 @@
+modelCheck('ringmodel.txt')
+modelData('ringdata.txt')
+modelCompile(1)
+modelInits('ringinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

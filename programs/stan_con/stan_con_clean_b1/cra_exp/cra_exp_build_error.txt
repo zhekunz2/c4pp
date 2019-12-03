@@ -1,0 +1,10 @@
+
+--- Translating Stan model to C++ code ---
+bin/stanc  cra_exp/cra_exp.stan --o=cra_exp/cra_exp.hpp
+Model name=cra_exp_model
+Input file=cra_exp/cra_exp.stan
+Output file=cra_exp/cra_exp.hpp
+
+could not find include file
+make/models:20: recipe for target 'cra_exp/cra_exp.hpp' failed
+make: *** [cra_exp/cra_exp.hpp] Error 255

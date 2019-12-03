@@ -1,0 +1,53 @@
+[
+  {
+    "gp": [
+      "gp-fit",
+      "gp-fit-ARD",
+      "gp-fit-latent",
+      "gp-fit-logit",
+      "gp-fit-multi-output",
+      "gp-fit-pois",
+      "gp-predict",
+      "gp-predict-analytic",
+      "gp-predict-logit",
+      "gp-sim",
+      "gp-sim-cholesky",
+      "gp-sim-multi",
+      "gp-sim-multi-output",
+      "gp-sim-naive"
+    ]
+  },
+  {
+    "hmm": [
+      "hmm",
+      "hmm-sufficient",
+      "hmm-analytic",
+      "hmm-semisup"
+    ]
+  },
+  {
+    "moving-avg": [
+      "arma11",
+      "arma11_alt",
+      "ma2",
+      "stochastic-volatility",
+      "stochastic-volatility-optimized",
+      "koyck"
+    ]
+  },
+  {
+    "kalman": [
+      "fx_factor",
+      "fx_equicorr",
+      "nile"
+    ]
+  }
+]
+
+
+
+
+
+
+
+

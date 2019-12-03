@@ -1,0 +1,11 @@
+modelCheck('icemodel.txt')
+modelData('icedata.txt')
+modelCompile(1)
+modelInits('iceinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

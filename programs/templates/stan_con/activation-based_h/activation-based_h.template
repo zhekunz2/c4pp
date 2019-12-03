@@ -1,0 +1,123 @@
+functions {
+    vector mean_of_X_by_Y(vector X, int[] Y){
+    int N_rows
+    int N_groups
+    N_rows = num_elements(X)
+    if(N_rows!= num_elements(Y)) 
+      reject("X and Y don't have the same length")
+    N_groups = max(Y)
+    { 
+      matrix[N_rows, N_groups] matrix_1 
+      for(r in 1:N_rows)
+        for(g in 1:N_groups)
+        matrix_1[r,g] =  (g ==  Y[r])  
+      return(((X' * matrix_1)      / crossprod(matrix_1))')
+    }
+  }
+  float psi_max(vector u_psi, int[] subj, vector RT) {
+    float psi_max
+    psi_max = positive_infinity()
+    for (i in 1:num_elements(RT))
+         psi_max = fmin(psi_max, log(RT[i]) - u_psi[subj[i]])
+    return (psi_max)
+  }
+    float race(int winner, float RT, vector alpha, float b, float sigma, float psi) {
+    float log_lik
+    int N_choices
+    N_choices = num_elements(alpha)
+    log_lik = 0
+    for (c in 1:N_choices)
+        if (c == winner)
+          log_lik = log_lik + lognormal_lpdf(RT-psi|b-alpha[c],sigma)
+        else 
+          log_lik = log_lik + lognormal_lccdf(RT-psi|b-alpha[c], sigma) 
+    return(log_lik)
+    }
+  vector race_rng(vector alpha, float b, float sigma,
+                   float psi) {
+    int N_choices
+    float curr_accum_RT 
+    float fastest_accum_RT 
+    vector[2] gen
+    N_choices = num_elements(alpha)
+    fastest_accum_RT = positive_infinity()
+    for (c in 1:N_choices) {
+      curr_accum_RT = psi + lognormal_rng(b - alpha[c], sigma)
+      if (curr_accum_RT < fastest_accum_RT){
+        fastest_accum_RT = curr_accum_RT
+        gen[1] = c
+        gen[2] = curr_accum_RT
+      }
+    } 
+    return(gen)  
+  }
+}
+data { 
+  N_obs
+  N_choices
+  winner[N_obs]
+  RT: <> [N_obs]
+  N_subj
+  subj[N_obs]
+   item[N_obs]
+   N_item
+}
+transformeddata {
+  float b 
+  float min_RT
+  float logmean_RT
+  vector[N_choices] logmean_RT_w
+  b = 10
+  min_RT = min(RT)
+  logmean_RT = log(mean(RT))
+  logmean_RT_w = log(mean_of_X_by_Y(RT, winner))
+}
+parameters{
+  vector[N_choices] alpha_0raw 
+  vector<lower = 0> [N_choices]  tau_u     
+  cholesky_factor_corr[N_choices] L_u  
+  matrix[N_choices, N_subj] z_u
+  vector<lower = 0> [N_choices]  tau_w     
+  cholesky_factor_corr[N_choices] L_w  
+  matrix[N_choices, N_item] z_w
+  float<lower = 0> sigma
+  vector[N_subj] u_psi
+  float<lower = 0> tau_psi 
+  float<upper = psi_max(u_psi, subj, RT) / logmean_RT> psi_0raw
+}
+transformedparameters {
+  float psi_0
+  matrix[N_choices, N_subj] u 
+  matrix[N_choices, N_item] w 
+  vector[N_choices] alpha_0 
+
+ 
+  u = diag_pre_multiply(tau_u, L_u) 
+      * z_u  
+  w = diag_pre_multiply(tau_w, L_w) 
+      * z_w
+ 
+  alpha_0 = b - alpha_0raw .* logmean_RT_w
+  psi_0 = psi_0raw * logmean_RT   
+}
+
+vector[N_obs] log_lik
+alpha_0raw ~ normal<N_choices>(0, 1)
+tau_u ~ normal<N_choices>(0, 1)<lower=0>
+L_u ~ lkj_corr_cholesky<N_choices>(2.0)
+to_vector(z_u) ~ normal(0, 1)
+tau_w ~ normal<N_choices>(0, 1)<lower=0>
+L_w ~ lkj_corr_cholesky<N_choices>(2.0)
+to_vector(z_w) ~ normal(0, 1)
+sigma ~ normal(0, 2)<lower=0>
+psi_0raw ~ normal(0, 1)<upper = psi_max(u_psi, subj, RT) / logmean_RT>
+tau_psi ~ normal(0, 1)<lower=0>
+u_psi ~ normal<N_subj>(0, tau_psi)
+for (n in 1:N_obs) {
+vector[N_choices] alpha
+float psi
+alpha = alpha_0 + u[, subj[n]] + w[, item[n]]
+psi = exp(psi_0 + u_psi[subj[n]])
+log_lik[n] = race(winner[n], RT[n], alpha, b, sigma, psi)
+}
+target += log_lik

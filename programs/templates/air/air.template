@@ -1,0 +1,19 @@
+J : 3
+n : [48, 34, 21][J]
+beta : 0.76
+y : [21, 20, 15][J]
+alpha : 4.48
+Z : <10.0, 30.0, 50.0>[J]
+sigma2 : 81.14
+transformeddata{
+    float<lower=0> sigma
+    sigma = sqrt(sigma2)
+}
+float p[J]
+theta1 := normal(0.0,32.0)
+theta2 := normal(0.0,32.0)
+X := normal<J>(alpha+beta*Z,sigma)
+observe(binomial_logit(n,theta1+theta2*X),y)
+posterior(theta2)
+posterior(X)
+posterior(theta1)

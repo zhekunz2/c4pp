@@ -1,0 +1,11 @@
+modelCheck('epilmodel.txt')
+modelData('epildata.txt')
+modelCompile(1)
+modelInits('epilinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

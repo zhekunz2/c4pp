@@ -1,0 +1,5 @@
+k : 5
+n : 10
+theta := beta(1.0,1.0)<lower=0,upper=1>
+observe(binomial(n,theta),k)
+posterior(theta)

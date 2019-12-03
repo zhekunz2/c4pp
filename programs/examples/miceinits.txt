@@ -1,0 +1,7 @@
+list(beta = c(-1, -1, -1, -1), r = 1,
+     t = structure(.Data=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 41, NA, NA,
+                           NA, NA, NA, NA, NA, 41, 41, NA, NA, NA, 41, NA, 41, 41, 41, 41, NA, NA, NA, NA,
+                           NA, NA, 11, NA, NA, NA, NA, NA, NA, NA, NA, NA, 25, NA, 41, 41, NA, NA, NA, NA,
+                           NA, NA, NA, NA, NA, NA, NA, 21, NA, NA, NA, NA, 30, 11, NA, NA, NA, NA, NA, NA),
+                   .Dim = c(4, 20)))
+

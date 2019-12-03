@@ -1,0 +1,28 @@
+1. SATzilla: Portfolio-based Algorithm Selection for SAT
+
+they use log of runtimes.. we can use log of data_size?
+
+do feature selection (forward selection)
+
+censored data(timed out cases)
+
+hierarchical models: check convergence, then accuracy?
+
+add details of timeouts (total, average) for feature computation and metric computation
+
+ground truth of mutants, how many converged/have accurate results?
+
+predictor for all models combined, extend to another unseen set of models?
+
+2. Performance Prediction and Automated Tuning of Randomized and Parametric Algorithms
+
+predict the parameters of runtime distribution
+
+predicting initial values of parameters
+
+3. https://mc-stan.org/users/documentation/case-studies/weakly_informative_shapes.html
+
+Weakly informative priors are especially critical when inferences are hindered with only weakly identifiable likelihoods, such as those arising from models with sparse data.
+
+#Check for data sparsity/density! in Observed data variable/Input data Variable
+

@@ -1,0 +1,22 @@
+
+--- Translating Stan model to C++ code ---
+bin/stanc  bandit4arm2_kalman_filter/bandit4arm2_kalman_filter.stan --o=bandit4arm2_kalman_filter/bandit4arm2_kalman_filter.hpp
+Model name=bandit4arm2_kalman_filter_model
+Input file=bandit4arm2_kalman_filter/bandit4arm2_kalman_filter.stan
+Output file=bandit4arm2_kalman_filter/bandit4arm2_kalman_filter.hpp
+
+SYNTAX ERROR, MESSAGE(S) FROM PARSER:
+
+  error in 'bandit4arm2_kalman_filter/bandit4arm2_kalman_filter.stan' at line 83, column 27
+  -------------------------------------------------
+    81: 
+    82:       // value updating (learning)
+    83:       mu_ev[choice[i,t]] += k * pe;
+                                  ^
+    84:       sd_ev_sq[choice[i,t]] *= (1-k);
+  -------------------------------------------------
+
+PARSER EXPECTED: <expression>
+
+make/models:20: recipe for target 'bandit4arm2_kalman_filter/bandit4arm2_kalman_filter.hpp' failed
+make: *** [bandit4arm2_kalman_filter/bandit4arm2_kalman_filter.hpp] Error 253

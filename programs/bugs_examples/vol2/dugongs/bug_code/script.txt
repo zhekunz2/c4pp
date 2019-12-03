@@ -1,0 +1,11 @@
+modelCheck('dugongsmodel.txt')
+modelData('dugongsdata.txt')
+modelCompile(1)
+modelInits('dugongsinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

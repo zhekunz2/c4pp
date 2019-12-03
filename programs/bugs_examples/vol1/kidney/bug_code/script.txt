@@ -1,0 +1,11 @@
+modelCheck('kidneymodel.txt')
+modelData('kidneydata.txt')
+modelCompile(1)
+modelInits('kidneyinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

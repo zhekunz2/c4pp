@@ -1,0 +1,11 @@
+modelCheck('leukfr0model.txt')
+modelData('leukfr0data.txt')
+modelCompile(1)
+modelInits('leukfr0inits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

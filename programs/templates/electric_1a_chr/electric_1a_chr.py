@@ -1,0 +1,106 @@
+import pyro, numpy as np, torch, pyro.distributions   as dist, torch.nn as nn
+from pyro.optim import Adam
+import torch.distributions.constraints as constraints
+from pyro.infer import SVI
+if pyro.__version__ > '0.1.2': from pyro.infer import Trace_ELBO
+from pyro.contrib.autoguide import *
+import math
+def amb(x):
+    return x.data.numpy().tolist() if isinstance(x, torch.Tensor) else x
+grade= np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], dtype=np.int64).reshape(192,1)
+grade=torch.tensor(grade)
+n_grade_pair=4
+n_grade_pair=torch.tensor(n_grade_pair)
+grade_pair= np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], dtype=np.int64).reshape(96,1)
+grade_pair=torch.tensor(grade_pair)
+N=192
+N=torch.tensor(N)
+y= np.array([48.9, 70.5, 89.7, 44.2, 77.5, 84.7, 78.9, 86.8, 60.8, 75.7, 95.1, 81.6, 101.2, 66.4, 96.2, 101.3, 108.9, 114.6, 111.7, 97.3, 96.5, 94.9, 104.8, 104.5, 108.3, 92.8, 104.9, 88.9, 109.9, 98.9, 113.1, 114.1, 114.0, 114.0, 92.4, 116.2, 116.9, 106.9, 104.6, 114.2, 113.6, 116.6, 114.8, 114.9, 111.0, 113.9, 60.6, 55.5, 84.8, 84.9, 101.9, 70.6, 78.4, 84.2, 108.6, 76.6, 101.9, 100.1, 91.7, 92.5, 94.4, 101.3, 102.2, 100.6, 113.8, 114.3, 87.9, 105.6, 102.5, 93.6, 109.2, 111.2, 106.4, 110.6, 112.1, 113.3, 111.1, 98.9, 112.2, 114.5, 110.3, 103.7, 110.8, 108.9, 109.6, 107.2, 115.6, 116.2, 119.6, 109.6, 122.0, 109.7, 112.4, 115.5, 119.7, 111.5, 52.3, 55.0, 80.4, 47.0, 69.7, 74.1, 72.7, 97.3, 74.1, 76.3, 84.5, 69.1, 77.0, 72.9, 94.4, 98.0, 82.4, 104.9, 102.4, 95.3, 89.5, 80.0, 96.9, 102.9, 68.9, 110.6, 107.6, 90.5, 105.8, 110.6, 111.3, 107.1, 105.8, 111.0, 91.7, 95.5, 109.4, 94.0, 101.0, 115.3, 110.6, 96.0, 111.7, 115.9, 113.9, 114.4, 54.6, 56.5, 75.2, 71.1, 75.6, 55.3, 59.3, 87.0, 73.7, 52.9, 110.3, 98.9, 97.2, 97.2, 67.6, 103.9, 103.8, 93.4, 103.1, 101.2, 83.6, 103.0, 88.5, 97.8, 103.6, 105.8, 99.6, 104.8, 86.0, 85.3, 102.9, 110.4, 115.3, 114.7, 110.2, 98.3, 101.9, 100.8, 111.6, 105.4, 116.2, 115.7, 118.0, 110.9, 113.4, 111.2, 113.3, 115.9, 115.2, 110.0], dtype=np.float32).reshape(192,1)
+y=torch.tensor(y)
+n_pair=96
+n_pair=torch.tensor(n_pair)
+treatment= np.array([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], dtype=np.float32).reshape(192,1)
+treatment=torch.tensor(treatment)
+pair= np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96], dtype=np.int64).reshape(192,1)
+pair=torch.tensor(pair)
+n_grade=4
+n_grade=torch.tensor(n_grade)
+def model(grade,n_grade_pair,grade_pair,N,y,n_pair,treatment,pair,n_grade):
+    with pyro.iarange('sigma_a_range_'.format('')):
+        sigma_a = pyro.sample('sigma_a'.format(''), dist.Normal(torch.tensor(1234.0)*torch.ones([amb(4)]),torch.tensor(1234.0)*torch.ones([amb(4)])))
+    with pyro.iarange('sigma_y_range_'.format('')):
+        sigma_y = pyro.sample('sigma_y'.format(''), dist.Normal(torch.tensor(1234.0)*torch.ones([amb(4)]),torch.tensor(1234.0)*torch.ones([amb(4)])))
+    with pyro.iarange('mu_a_range_'.format('')):
+        mu_a = pyro.sample('mu_a'.format(''), dist.Normal(torch.tensor(0.0)*torch.ones([amb(n_grade_pair)]),torch.tensor(1.0)*torch.ones([amb(n_grade_pair)])))
+    with pyro.iarange('eta_a_range_'.format('')):
+        eta_a = pyro.sample('eta_a'.format(''), dist.Normal(torch.tensor(0.0)*torch.ones([amb(n_pair)]),torch.tensor(1.0)*torch.ones([amb(n_pair)])))
+    with pyro.iarange('b_range_'.format('')):
+        b = pyro.sample('b'.format(''), dist.Normal(torch.tensor(0.0)*torch.ones([amb(n_grade)]),torch.tensor(100.0)*torch.ones([amb(n_grade)])))
+    a = torch.zeros([amb(n_pair)])
+    sigma_y_hat = torch.zeros([amb(N)])
+    y_hat = torch.zeros([amb(N)])
+    for i in range(1, n_pair+1):
+        a[i-1]=100*mu_a[grade_pair[i-1]-1]+sigma_a[grade_pair[i-1]-1]*eta_a[i-1]
+    for i in range(1, N+1):
+        y_hat[i-1]=a[pair[i-1]-1]+b[grade[i-1]-1]*treatment[i-1]
+        sigma_y_hat[i-1]=sigma_y[grade[i-1]-1]
+    pyro.sample('obs__100'.format(), dist.Normal(y_hat,sigma_y_hat), obs=y)
+    
+def guide(grade,n_grade_pair,grade_pair,N,y,n_pair,treatment,pair,n_grade):
+    arg_1 = pyro.param('arg_1', torch.ones((amb(4))))
+    arg_2 = pyro.param('arg_2', torch.ones((amb(4))), constraint=constraints.positive)
+    with pyro.iarange('sigma_a_prange'):
+        sigma_a = pyro.sample('sigma_a'.format(''), dist.Normal(arg_1,arg_2))
+    arg_3 = pyro.param('arg_3', torch.ones((amb(4))))
+    arg_4 = pyro.param('arg_4', torch.ones((amb(4))), constraint=constraints.positive)
+    with pyro.iarange('sigma_y_prange'):
+        sigma_y = pyro.sample('sigma_y'.format(''), dist.Cauchy(arg_3,arg_4))
+    arg_5 = pyro.param('arg_5', torch.ones((amb(n_grade_pair))), constraint=constraints.positive)
+    arg_6 = pyro.param('arg_6', torch.ones((amb(n_grade_pair))), constraint=constraints.positive)
+    with pyro.iarange('mu_a_prange'):
+        mu_a = pyro.sample('mu_a'.format(''), dist.Beta(arg_5,arg_6))
+    arg_7 = pyro.param('arg_7', torch.ones((amb(n_pair))), constraint=constraints.positive)
+    arg_8 = pyro.param('arg_8', torch.ones((amb(n_pair))), constraint=constraints.positive)
+    with pyro.iarange('eta_a_prange'):
+        eta_a = pyro.sample('eta_a'.format(''), dist.Pareto(arg_7,arg_8))
+    arg_9 = pyro.param('arg_9', torch.ones((amb(n_grade))), constraint=constraints.positive)
+    arg_10 = pyro.param('arg_10', torch.ones((amb(n_grade))), constraint=constraints.positive)
+    with pyro.iarange('b_prange'):
+        b = pyro.sample('b'.format(''), dist.Pareto(arg_9,arg_10))
+    for i in range(1, n_pair+1):
+        pass
+    for i in range(1, N+1):
+        pass
+    
+    pass
+    return { "eta_a": eta_a,"sigma_a": sigma_a,"b": b,"sigma_y": sigma_y,"mu_a": mu_a, }
+optim = Adam({'lr': 0.05})
+svi = SVI(model, guide, optim, loss=Trace_ELBO() if pyro.__version__ > '0.1.2' else 'ELBO')
+for i in range(4000):
+    loss = svi.step(grade,n_grade_pair,grade_pair,N,y,n_pair,treatment,pair,n_grade)
+    if ((i % 1000) == 0):
+        print(loss)
+for name in pyro.get_param_store().get_all_param_names():
+    print(('{0} : {1}'.format(name, pyro.param(name).data.numpy())))
+print('eta_a_mean', np.array2string(dist.Pareto(pyro.param('arg_7'), pyro.param('arg_8')).mean.detach().numpy(), separator=','))
+print('sigma_a_mean', np.array2string(dist.Normal(pyro.param('arg_1'), pyro.param('arg_2')).mean.detach().numpy(), separator=','))
+print('b_mean', np.array2string(dist.Pareto(pyro.param('arg_9'), pyro.param('arg_10')).mean.detach().numpy(), separator=','))
+print('sigma_y_mean', np.array2string(dist.Cauchy(pyro.param('arg_3'), pyro.param('arg_4')).mean.detach().numpy(), separator=','))
+print('mu_a_mean', np.array2string(dist.Beta(pyro.param('arg_5'), pyro.param('arg_6')).mean.detach().numpy(), separator=','))
+np.set_printoptions(threshold=np.inf)
+with open('samples','w') as samplefile:
+    samplefile.write('eta_a:')
+    samplefile.write(np.array2string(np.array([guide(grade,n_grade_pair,grade_pair,N,y,n_pair,treatment,pair,n_grade)['eta_a'].data.numpy() for _ in range(1000)]), separator=',').replace('\n',''))
+    samplefile.write('\n')
+    samplefile.write('sigma_a:')
+    samplefile.write(np.array2string(np.array([guide(grade,n_grade_pair,grade_pair,N,y,n_pair,treatment,pair,n_grade)['sigma_a'].data.numpy() for _ in range(1000)]), separator=',').replace('\n',''))
+    samplefile.write('\n')
+    samplefile.write('b:')
+    samplefile.write(np.array2string(np.array([guide(grade,n_grade_pair,grade_pair,N,y,n_pair,treatment,pair,n_grade)['b'].data.numpy() for _ in range(1000)]), separator=',').replace('\n',''))
+    samplefile.write('\n')
+    samplefile.write('sigma_y:')
+    samplefile.write(np.array2string(np.array([guide(grade,n_grade_pair,grade_pair,N,y,n_pair,treatment,pair,n_grade)['sigma_y'].data.numpy() for _ in range(1000)]), separator=',').replace('\n',''))
+    samplefile.write('\n')
+    samplefile.write('mu_a:')
+    samplefile.write(np.array2string(np.array([guide(grade,n_grade_pair,grade_pair,N,y,n_pair,treatment,pair,n_grade)['mu_a'].data.numpy() for _ in range(1000)]), separator=',').replace('\n',''))
+    samplefile.write('\n')

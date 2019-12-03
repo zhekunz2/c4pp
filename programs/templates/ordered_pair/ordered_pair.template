@@ -1,0 +1,11 @@
+dummy : 0
+transformeddata{
+    float L
+    float H
+    L = -5.0
+    H = 5.0
+}
+a := normal(1234.0,1234.0)<lower=L,upper=H>
+b := normal(1234.0,1234.0)<lower=a,upper=H>
+posterior(a)
+posterior(b)

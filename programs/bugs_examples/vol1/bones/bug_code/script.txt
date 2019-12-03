@@ -1,0 +1,11 @@
+modelCheck('bonesmodel.txt')
+modelData('bonesdata.txt')
+modelCompile(1)
+modelInits('bonesinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

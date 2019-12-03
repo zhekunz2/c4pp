@@ -1,0 +1,11 @@
+modelCheck('pumpmodel.txt')
+modelData('pumpdata.txt')
+modelCompile(1)
+modelInits('pumpinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

@@ -1,0 +1,26 @@
+I : 21
+x2 : <0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0>[I]
+x1 : <0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0>[I]
+n : [10, 23, 23, 26, 17, 5, 53, 55, 32, 46, 10, 8, 10, 8, 23, 0, 3, 22, 15, 32, 3][I]
+N : [39, 62, 81, 51, 39, 6, 74, 72, 51, 79, 13, 16, 30, 28, 45, 4, 12, 41, 30, 51, 7][I]
+transformeddata{
+    vector[I] x1x2
+    x1x2 = x1.*x2
+}
+transformedparam{
+    vector[I] b
+    b = c-mean(c)
+}
+alpha0 := normal(0.0,1.0)
+alpha1 := normal(0.0,1.0)
+alpha2 := normal(0.0,1.0)
+alpha12 := normal(0.0,1.0)
+sigma := cauchy(0.0,1.0)<lower=0>
+c := normal<I>(0.0,sigma)
+observe(binomial_logit(N,alpha0+alpha1*x1+alpha2*x2+alpha12*x1x2+b),n)
+posterior(alpha2)
+posterior(c)
+posterior(alpha1)
+posterior(alpha0)
+posterior(alpha12)
+posterior(sigma)

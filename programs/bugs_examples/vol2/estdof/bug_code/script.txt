@@ -1,0 +1,11 @@
+modelCheck('estdofmodel.txt')
+modelData('estdofdata.txt')
+modelCompile(1)
+modelInits('estdofinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

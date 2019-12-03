@@ -1,0 +1,11 @@
+modelCheck('stagnantmodel.txt')
+modelData('stagnantdata.txt')
+modelCompile(1)
+modelInits('stagnantinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

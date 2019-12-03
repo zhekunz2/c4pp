@@ -1,0 +1,22 @@
+
+--- Translating Stan model to C++ code ---
+bin/stanc  gng_m3/gng_m3.stan --o=gng_m3/gng_m3.hpp
+Model name=gng_m3_model
+Input file=gng_m3/gng_m3.stan
+Output file=gng_m3/gng_m3.hpp
+
+SYNTAX ERROR, MESSAGE(S) FROM PARSER:
+
+  error in 'gng_m3/gng_m3.stan' at line 81, column 27
+  -------------------------------------------------
+    79:       pGo[cue[i, t]]   = inv_logit(wv_g[cue[i, t]] - wv_ng[cue[i, t]]);
+    80:       {  // noise
+    81:         pGo[cue[i, t]]   *= (1 - xi[i]);
+                                  ^
+    82:         pGo[cue[i, t]]   += xi[i]/2;
+  -------------------------------------------------
+
+PARSER EXPECTED: <expression>
+
+make/models:20: recipe for target 'gng_m3/gng_m3.hpp' failed
+make: *** [gng_m3/gng_m3.hpp] Error 253

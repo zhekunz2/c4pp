@@ -1,0 +1,11 @@
+dummy : 0
+transformedparam{
+    float y
+    vector[9] x
+    y = 3.0*y_raw
+    x = exp(y/2)*x_raw
+}
+y_raw := normal(0.0,1.0)
+x_raw := normal<9>(0.0,1.0)
+posterior(y_raw)
+posterior(x_raw)

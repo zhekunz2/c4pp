@@ -1,0 +1,11 @@
+modelCheck('orangemodel.txt')
+modelData('orangedata.txt')
+modelCompile(1)
+modelInits('orangeinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

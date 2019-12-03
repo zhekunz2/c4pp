@@ -1,0 +1,11 @@
+modelCheck('airmodel.txt')
+modelData('airdata.txt')
+modelCompile(1)
+modelInits('airinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

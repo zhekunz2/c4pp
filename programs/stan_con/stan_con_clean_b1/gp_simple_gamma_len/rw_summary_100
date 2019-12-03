@@ -1,0 +1,21 @@
+name,Mean,MCSE,StdDev,5%,50%,95%,N_Eff,N_Eff/s,R_hat
+"lp__",-10.3332,0.588721,1.98197,-15.5909,-9.84798,-8.50068,11.3338,432.901,1.1746
+"accept_stat__",0.936801,0.00719067,0.0719067,0.754542,0.964186,1,100,3819.56,1.03403
+"stepsize__",0.524905,3.13225e-16,2.23163e-16,0.524905,0.524905,0.524905,0.507614,19.3886,-nan
+"treedepth__",2.53,0.0521362,0.521362,2,3,3,100,3819.56,0.999189
+"n_leapfrog__",6.28,0.318481,3.18481,3,7,11,100,3819.56,0.995644
+"divergent__",0,0,0,0,0,0,100,3819.56,-nan
+"energy__",11.8409,0.761134,2.44288,9.20749,11.256,17.9385,10.3011,393.455,1.21881
+"length_scale",0.170761,0.0180906,0.0632252,0.116706,0.152653,0.294313,12.2145,466.542,1.1247
+"alpha",1.39259,0.0367356,0.321051,0.978196,1.31583,2.05906,76.3787,2917.33,1.0306
+"sigma",0.300664,0.0268288,0.11805,0.165908,0.279164,0.516017,19.361,739.508,1.03809
+# Inference for Stan model: gp_simple_gamma_len_model
+# 1 chains: each with iter=(100); warmup=(1000); thin=(1); 1100 iterations saved.
+#
+# Warmup took (0.26) seconds, 0.26 seconds total
+# Sampling took (0.026) seconds, 0.026 seconds total
+#
+# Samples were drawn using hmc with nuts.
+# For each parameter, N_Eff is a crude measure of effective sample size,
+# and R_hat is the potential scale reduction factor on split chains (at 
+# convergence, R_hat=1).

@@ -1,0 +1,11 @@
+modelCheck('seedsmodel.txt')
+modelData('seedsdata.txt')
+modelCompile(1)
+modelInits('seedsinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

@@ -1,0 +1,11 @@
+modelCheck('leuk0model.txt')
+modelData('leuk0data.txt')
+modelCompile(1)
+modelInits('leuk0inits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

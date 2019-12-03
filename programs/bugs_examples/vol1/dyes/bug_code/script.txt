@@ -1,0 +1,11 @@
+modelCheck('dyesmodel.txt')
+modelData('dyesdata.txt')
+modelCompile(1)
+modelInits('dyesinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

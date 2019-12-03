@@ -1,0 +1,10 @@
+
+--- Translating Stan model to C++ code ---
+bin/stanc  cra_linear/cra_linear.stan --o=cra_linear/cra_linear.hpp
+Model name=cra_linear_model
+Input file=cra_linear/cra_linear.stan
+Output file=cra_linear/cra_linear.hpp
+
+could not find include file
+make/models:20: recipe for target 'cra_linear/cra_linear.hpp' failed
+make: *** [cra_linear/cra_linear.hpp] Error 255

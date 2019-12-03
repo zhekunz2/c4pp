@@ -1,0 +1,7 @@
+final : float[52]
+midterm : float[52]
+beta := gamma(1,1)[2]
+sigma := gamma(1,1)
+observe(normal(beta[0]+beta[1]*midterm,sigma),final)
+posterior(beta)
+posterior(sigma)

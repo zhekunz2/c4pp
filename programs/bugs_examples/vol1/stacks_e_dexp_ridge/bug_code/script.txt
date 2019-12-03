@@ -1,0 +1,11 @@
+modelCheck('stacks_e_dexp_ridgemodel.txt')
+modelData('stacks_e_dexp_ridgedata.txt')
+modelCompile(1)
+modelInits('stacks_e_dexp_ridgeinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

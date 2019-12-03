@@ -1,0 +1,11 @@
+modelCheck('squaremcmodel.txt')
+modelData('squaremcdata.txt')
+modelCompile(1)
+modelInits('squaremcinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

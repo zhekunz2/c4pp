@@ -1,0 +1,11 @@
+modelCheck('beetles_logitmodel.txt')
+modelData('beetles_logitdata.txt')
+modelCompile(1)
+modelInits('beetles_logitinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

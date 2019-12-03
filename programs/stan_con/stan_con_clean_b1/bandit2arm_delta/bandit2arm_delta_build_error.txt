@@ -1,0 +1,22 @@
+
+--- Translating Stan model to C++ code ---
+bin/stanc  bandit2arm_delta/bandit2arm_delta.stan --o=bandit2arm_delta/bandit2arm_delta.hpp
+Model name=bandit2arm_delta_model
+Input file=bandit2arm_delta/bandit2arm_delta.stan
+Output file=bandit2arm_delta/bandit2arm_delta.hpp
+
+SYNTAX ERROR, MESSAGE(S) FROM PARSER:
+
+  error in 'bandit2arm_delta/bandit2arm_delta.stan' at line 56, column 25
+  -------------------------------------------------
+    54: 
+    55:       // value updating (learning)
+    56:       ev[choice[i, t]] += A[i] * PE;
+                                ^
+    57:     }
+  -------------------------------------------------
+
+PARSER EXPECTED: <expression>
+
+make/models:20: recipe for target 'bandit2arm_delta/bandit2arm_delta.hpp' failed
+make: *** [bandit2arm_delta/bandit2arm_delta.hpp] Error 253

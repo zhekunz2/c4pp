@@ -1,0 +1,11 @@
+modelCheck('firemodel.txt')
+modelData('firedata.txt')
+modelCompile(1)
+modelInits('fireinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

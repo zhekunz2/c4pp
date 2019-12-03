@@ -1,0 +1,11 @@
+modelCheck('schools-1model.txt')
+modelData('schools-1data.txt')
+modelCompile(1)
+modelInits('schools-1inits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

@@ -1,0 +1,7 @@
+lm(formula = earn ~ height)
+            coef.est  coef.se  
+(Intercept) -61316.28   9525.18
+height        1262.33    142.11
+---
+n = 1192, k = 2
+residual sd = 18865.08, R-Squared = 0.06

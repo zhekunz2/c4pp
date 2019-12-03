@@ -1,0 +1,8 @@
+y : [0, 1, 0, 0, 0, 0, 0, 0, 0, 1][N]
+N : 10
+theta := beta(1.0,1.0)<lower=0,upper=1>
+for(n in 1:N)
+{
+    observe(bernoulli(theta),y[n])
+}
+posterior(theta)

@@ -1,0 +1,10 @@
+
+--- Translating Stan model to C++ code ---
+bin/stanc  bandit4arm_lapse_decay/bandit4arm_lapse_decay.stan --o=bandit4arm_lapse_decay/bandit4arm_lapse_decay.hpp
+Model name=bandit4arm_lapse_decay_model
+Input file=bandit4arm_lapse_decay/bandit4arm_lapse_decay.stan
+Output file=bandit4arm_lapse_decay/bandit4arm_lapse_decay.hpp
+
+could not find include file
+make/models:20: recipe for target 'bandit4arm_lapse_decay/bandit4arm_lapse_decay.hpp' failed
+make: *** [bandit4arm_lapse_decay/bandit4arm_lapse_decay.hpp] Error 255

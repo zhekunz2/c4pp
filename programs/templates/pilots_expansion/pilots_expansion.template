@@ -1,0 +1,42 @@
+N : 40
+n_treatment : 5
+airport : [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8][N]
+treatment : [1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5][N]
+y : <0.375, 0.0, 0.375, 0.0, 0.333333333333, 1.0, 0.125, 1.0, 0.25, 0.0, 0.5, 0.125, 0.5, 1.0, 0.125, 0.857142857143, 0.5, 0.666666666667, 0.333333333333, 0.0, 0.142857142857, 1.0, 0.0, 1.0, 0.142857142857, 0.0, 0.714285714286, 0.0, 0.285714285714, 1.0, 0.142857142857, 1.0, 0.428571428571, 0.0, 0.285714285714, 0.857142857143, 0.857142857143, 0.857142857143, 0.142857142857, 0.75>[N]
+n_airport : 8
+transformedparam{
+    vector[n_airport] d
+    vector[n_treatment] g
+    float<lower=0> sigma_d
+    float<lower=0> sigma_g
+    vector[N] y_hat
+    g = xi_g*(g_raw-mean(g_raw))
+    d = xi_d*(d_raw-mean(d_raw))
+    sigma_g = xi_g*sigma_g_raw
+    sigma_d = fabs(xi_d)*sigma_d_raw
+    for(i in 1:N)
+    {
+        y_hat[i] = mu+g[treatment[i]]+d[airport[i]]
+    }
+}
+sigma_y := uniform(0.0,100.0)<lower=0,upper=100>
+sigma_d_raw := uniform(0.0,100.0)<lower=0,upper=100>
+sigma_g_raw := uniform(0.0,100.0)<lower=0,upper=100>
+xi_g := uniform(0.0,100.0)<lower=0,upper=100>
+xi_d := normal(0.0,100.0)
+mu := normal(0.0,100.0)
+mu_g_raw := normal(0.0,1.0)
+mu_d_raw := normal(0.0,1.0)
+g_raw := normal<n_treatment>(100*mu_g_raw,sigma_g_raw)
+d_raw := normal<n_airport>(100*mu_d_raw,sigma_d_raw)
+observe(normal(y_hat,sigma_y),y)
+posterior(sigma_d_raw)
+posterior(sigma_y)
+posterior(sigma_g_raw)
+posterior(mu_d_raw)
+posterior(xi_g)
+posterior(mu)
+posterior(d_raw)
+posterior(xi_d)
+posterior(mu_g_raw)
+posterior(g_raw)

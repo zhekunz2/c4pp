@@ -1,0 +1,11 @@
+modelCheck('inhalersmodel.txt')
+modelData('inhalersdata.txt')
+modelCompile(1)
+modelInits('inhalersinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

@@ -1,0 +1,11 @@
+dummy : 0
+x2 := normal(1234.0,1234.0)<lower=-1,upper=1>
+x1 := normal(1234.0,1234.0)<lower=-1,upper=1>
+generatedquantities{
+    float a
+    float b
+    a = fmax(x1,x2)
+    b = fmin(x1,x2)
+}
+posterior(x2)
+posterior(x1)

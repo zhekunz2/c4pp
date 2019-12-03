@@ -1,0 +1,15 @@
+dummy : 0
+transformeddata{
+    float y[5]
+    y[1] = 2.0
+    y[2] = 1.0
+    y[3] = -0.5
+    y[4] = 3.0
+    y[5] = 0.25
+}
+mu := normal(1234.0,1234.0)
+for(n in 1:5)
+{
+    observe(normal(mu,1.0),y[n])
+}
+posterior(mu)

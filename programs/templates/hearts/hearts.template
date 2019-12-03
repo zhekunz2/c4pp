@@ -1,0 +1,31 @@
+y : [5, 2, 0, 0, 2, 1, 0, 0, 0, 0, 13, 0][N]
+x : [6, 9, 17, 22, 7, 5, 5, 14, 9, 7, 9, 51][N]
+t : [11, 11, 17, 22, 9, 6, 5, 14, 9, 7, 22, 51][N]
+N : 12
+transformedparam{
+    float<lower=0,upper=1> theta
+    theta = inv_logit(delta)
+}
+float p
+float log1m_theta
+p = inv_logit(alpha)
+log1m_theta = log1m(theta)
+alpha := normal(0.0,100.0)
+delta := normal(0.0,100.0)
+for(i in 1:N)
+{
+    if(y[i]==0)
+    {
+        increment_log_prob(log(theta+(1-theta)*pow(1-p,t[i])))
+    }
+    else
+    {
+        increment_log_prob(log1m_theta+binomial_log(y[i],t[i],p))
+    }
+}
+generatedquantities{
+    float beta
+    beta = exp(alpha)
+}
+posterior(alpha)
+posterior(delta)

@@ -1,0 +1,33 @@
+group_uncensored : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4][N_uncensored]
+N_uncensored : 65
+M : 4
+t_uncensored : [12.0, 17.0, 21.0, 25.0, 11.0, 26.0, 27.0, 30.0, 13.0, 12.0, 21.0, 20.0, 23.0, 25.0, 23.0, 29.0, 35.0, 31.0, 36.0, 32.0, 27.0, 23.0, 12.0, 18.0, 38.0, 29.0, 30.0, 32.0, 25.0, 30.0, 37.0, 27.0, 22.0, 26.0, 28.0, 19.0, 15.0, 12.0, 35.0, 35.0, 10.0, 22.0, 18.0, 12.0, 31.0, 24.0, 37.0, 29.0, 27.0, 18.0, 22.0, 13.0, 18.0, 29.0, 28.0, 16.0, 22.0, 26.0, 19.0, 17.0, 28.0, 26.0, 12.0, 17.0, 26.0][N_uncensored]
+N_censored : 15
+censor_time : [40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 10.0, 24.0, 40.0, 40.0, 20.0, 29.0, 10.0][N_censored]
+group_censored : [1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4][N_censored]
+r := exponential(0.001)<lower=0>
+beta := normal(0.0,100.0)[M]
+for(n in 1:N_uncensored)
+{
+    observe(weibull(r,exp(-beta[group_uncensored[n]]/r)),t_uncensored[n])
+}
+for(n in 1:N_censored)
+{
+    t2_censored[n] := weibull(r,exp(-beta[group_censored[n]]/r)/censor_time[n])[N_censored]
+}
+generatedquantities{
+    float median[M]
+    float pos_control
+    float test_sub
+    float veh_control
+    for(m in 1:M)
+    {
+        median[m] = pow(log(2)*exp(-beta[m]),1/r)
+    }
+    veh_control = beta[2]-beta[1]
+    test_sub = beta[3]-beta[1]
+    pos_control = beta[4]-beta[1]
+}
+posterior(t2_censored)
+posterior(beta)
+posterior(r)

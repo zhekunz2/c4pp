@@ -1,0 +1,14 @@
+n1 : 10
+n2 : 10
+k1 : 5
+k2 : 7
+transformedparam{
+    float<lower=-1,upper=1> delta
+    delta = theta1-theta2
+}
+theta1 := beta(1.0,1.0)<lower=0,upper=1>
+theta2 := beta(1.0,1.0)<lower=0,upper=1>
+observe(binomial(n1,theta1),k1)
+observe(binomial(n2,theta2),k2)
+posterior(theta2)
+posterior(theta1)

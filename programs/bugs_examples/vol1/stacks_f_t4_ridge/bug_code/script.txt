@@ -1,0 +1,11 @@
+modelCheck('stacks_f_t4_ridgemodel.txt')
+modelData('stacks_f_t4_ridgedata.txt')
+modelCompile(1)
+modelInits('stacks_f_t4_ridgeinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

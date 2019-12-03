@@ -1,0 +1,11 @@
+modelCheck('surgicalmodel.txt')
+modelData('surgicaldata.txt')
+modelCompile(1)
+modelInits('surgicalinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

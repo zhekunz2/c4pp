@@ -1,0 +1,51 @@
+K : 3
+beta : <0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1>[V]
+T : 100
+w : [4, 2, 7, 7, 2, 7, 2, 3, 4, 2, 4, 7, 2, 7, 7, 2, 7, 2, 7, 2, 2, 7, 7, 2, 7, 4, 2, 7, 7, 2, 7, 2, 7, 2, 2, 7, 2, 7, 2, 3, 2, 7, 2, 8, 7, 2, 7, 2, 7, 3, 2, 7, 2, 2, 2, 2, 7, 2, 2, 2, 2, 2, 3, 2, 7, 2, 7, 2, 2, 7, 2, 2, 2, 2, 7, 2, 7, 2, 7, 2, 2, 7, 2, 2, 2, 7, 2, 7, 2, 7, 3, 2, 7, 2, 2, 2, 3, 2, 2, 7][T]
+V : 10
+alpha : <1, 1, 1>[K]
+z : [1, 2, 3, 3, 2, 3, 2, 2, 1, 2, 1, 3, 2, 3, 3, 2, 3, 2, 3, 1, 2, 3, 3, 2, 3, 1, 2, 3, 3, 2, 3, 2, 3, 1, 2, 3, 2, 3, 2, 2, 2, 3, 2, 1, 3, 2, 3, 2, 3, 2, 2, 3, 2, 1, 2, 1, 3, 2, 2, 2, 2, 2, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 2, 2, 3, 2, 3, 2, 3, 1, 2, 3, 2, 1, 2, 3, 1, 3, 2, 3, 2, 2, 3, 2, 2, 2, 2, 2, 1, 3][T]
+transformeddata{
+    int<lower=0> trans[K,K]
+    int<lower=0> emit[K,V]
+    for(k1 in 1:K)
+    {
+        for(k2 in 1:K)
+        {
+            trans[k1,k2] = 0
+        }
+    }
+    for(t in 2:T)
+    {
+        trans[z[t-1],z[t]] = 1+trans[z[t-1],z[t]]
+    }
+    for(k in 1:K)
+    {
+        for(v in 1:V)
+        {
+            emit[k,v] = 0
+        }
+    }
+    for(t in 1:T)
+    {
+        emit[z[t],w[t]] = 1+emit[z[t],w[t]]
+    }
+}
+for(k in 1:K)
+{
+    theta[k] := dirichlet<K>(alpha)[K]
+}
+for(k in 1:K)
+{
+    phi[k] := dirichlet<V>(beta)[K]
+}
+for(k in 1:K)
+{
+    observe(multinomial(theta[k]),trans[k])
+}
+for(k in 1:K)
+{
+    observe(multinomial(phi[k]),emit[k])
+}
+posterior(theta)
+posterior(phi)

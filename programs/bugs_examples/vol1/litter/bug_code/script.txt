@@ -1,0 +1,11 @@
+modelCheck('littermodel.txt')
+modelData('litterdata.txt')
+modelCompile(1)
+modelInits('litterinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

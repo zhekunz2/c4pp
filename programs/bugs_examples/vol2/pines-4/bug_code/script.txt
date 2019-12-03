@@ -1,0 +1,11 @@
+modelCheck('pines-4model.txt')
+modelData('pines-4data.txt')
+modelCompile(1)
+modelInits('pines-4inits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

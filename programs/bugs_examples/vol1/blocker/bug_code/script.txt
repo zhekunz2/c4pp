@@ -1,0 +1,11 @@
+modelCheck('blockersmodel.txt')
+modelData('blockersdata.txt')
+modelCompile(1)
+modelInits('blockersinits.txt')
+
+modelUpdate(10)
+samplesSet('theta')
+samplesSet('X')
+modelUpdate(100)
+samplesStats('*')
+

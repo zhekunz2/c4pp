@@ -1,0 +1,122 @@
+functions {
+  vector twoCptModel1(float dt, vector init, float amt, int cmt, int evid,		    float CL, float Q, float V1, float V2, float ka) {
+    int nCmt
+    vector[3] x
+    float k10
+    float k12
+    float k21
+    float ksum
+    vector[3] a
+    vector[3] alpha
+    nCmt = 3
+    k10 = CL / V1
+    k12 = Q / V1
+    k21 = Q / V2
+    ksum = k10 + k12 + k21
+    alpha[1] = (ksum + sqrt(ksum * ksum - 4.0 * k10 * k21))/2.0
+    alpha[2] = (ksum - sqrt(ksum * ksum - 4.0 * k10 * k21))/2.0
+    alpha[3] = ka
+
+    x = rep_vector(0.0, nCmt)
+
+    if (init[1] != 0.0) {
+      x[1] = init[1] * exp(-alpha[3] * dt)
+      a[1] = ka * (k21 - alpha[1]) / ((ka - alpha[1]) * (alpha[2] - alpha[1]))
+      a[2] = ka * (k21 - alpha[2]) / ((ka - alpha[2]) * (alpha[1] - alpha[2]))
+      a[3] = -(a[1] + a[2])
+      x[2] = init[1] * sum(a .* exp(-alpha * dt))
+      a[1] = ka * k12 / ((ka - alpha[1]) * (alpha[2] - alpha[1]))
+      a[2] = ka * k12 / ((ka - alpha[2]) * (alpha[1] - alpha[2]))
+      a[3] = -(a[1] + a[2])
+      x[3] = init[1] * sum(a .* exp(-alpha * dt))
+    }
+    
+    if (init[2] != 0) {
+      a[1] = (k21 - alpha[1]) / (alpha[2] - alpha[1])
+      a[2] = (k21 - alpha[2]) / (alpha[1] - alpha[2])
+      x[2] = x[2] + init[2] * sum(segment(a, 1, 2) .* exp(-segment(alpha, 1, 2) * dt))
+      a[1] = k12 / (alpha[2] - alpha[1])
+      a[2] = -a[1]
+      x[3] = x[3] + init[2] * sum(segment(a, 1, 2) .* exp(-segment(alpha, 1, 2) * dt))
+    }
+
+    if (init[3] != 0) {
+      a[1] = k21 / (alpha[2] - alpha[1])
+      a[2] = -a[1]
+      x[2] = x[2] + init[3] * sum(segment(a, 1, 2) .* exp(-segment(alpha, 1, 2) * dt))
+      a[1] = (k10 + k12 - alpha[1]) / (alpha[2] - alpha[1])
+      a[2] = (k10 + k12 - alpha[2]) / (alpha[1] - alpha[2])
+      x[3] = x[3] + init[3] * sum(segment(a, 1, 2) .* exp(-segment(alpha, 1, 2) * dt))
+    }
+
+    if (evid == 1) x[cmt] = x[cmt] + amt
+
+    return(x)
+  }
+
+  matrix twoCptModel(float[] time, float[] amt, int[] cmt, int[] evid, 
+		     float CL, float Q, float V1, float V2, float ka) {
+    int nCmt
+    vector[3] init
+    float dt
+    float t0
+    matrix[size(time), 3] result
+    int nt
+    nCmt = 3
+    nt = size(time)
+
+    init = rep_vector(0, nCmt)
+    t0 = time[1]
+    for (i in 1:nt) {
+      dt = time[i] - t0
+      init = twoCptModel1(dt, init, amt[i], cmt[i], evid[i],			   CL, Q, V1, V2, ka)
+      for(j in 1:nCmt) result[i, j] = init[j]
+      t0 = time[i]
+    }
+    return(result)
+  }
+  
+}
+
+addl : [14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0]
+amt : [5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5000, 0,5000, 0, 5000, 0, 5000, 0, 5000, 0, 5000, 0, 5000, 0, 5000, 0, 5000, 0, 5000, 0, 5000, 0, 5000, 0,5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+cmt : [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1,2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,2]
+cObs : <48.9, 70.5, 102, 110, 134, 115, 70.2, 55.3, 26.1, 15.5, 15.9, 12.9, 56, 80.1, 94.4, 155,126, 145, 90.6, 59.3, 41.5, 25.6, 17.5, 18, 13.5, 14.8, 13.7, 16.7, 17.4, 14.2, 14.2, 14.8, 14.5,13.8, 14.9, 15.2, 12.9, 74.4, 103, 118, 154, 153, 116, 95.6, 61, 30.8, 29.7, 26.1, 19, 16.1, 10>
+evid : [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0,1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0]
+ii : [12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0]
+iObs : [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28,30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65,66]
+nObs : 51
+nt : 66
+rate : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0]
+ss : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0]
+time : [0, 0.083, 0.167, 0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 6, 8, 12, 12.083, 12.167, 12.25, 12.5,12.75, 13, 13.5, 14, 15, 16, 18, 20, 24, 24, 36, 36, 48, 48, 60, 60, 72, 72, 84, 84, 96, 96, 108, 108,120, 120, 132, 132, 144, 144, 156, 156, 168, 168, 168.083, 168.167, 168.25, 168.5, 168.75, 169, 169.5,170, 171, 172, 174, 176, 180, 186]
+
+transformeddata {
+  vector[nObs] logCObs
+  int nCmt
+
+  logCObs = log(cObs)
+  nCmt = 3
+}
+
+transformedparam {
+  vector<lower = 0>[nt] cHat
+  vector<lower = 0>[nObs] cHatObs
+  matrix<lower = 0>[nt, nCmt] x
+
+  x = twoCptModel(time, amt, cmt, evid, CL, Q, V1, V2, ka)
+
+  cHat = col(x, 2) ./ V1
+
+  cHatObs = cHat[iObs]
+}
+
+
+  CL := lognormal(log(10), 0.25)<lower=0>
+  Q :=lognormal(log(15), 0.5)<lower=0>
+  V1 := lognormal(log(35), 0.25)<lower=0>
+  V2 := lognormal(log(105), 0.5)<lower=0>
+  ka := normal(1234.0,1234.0)<lower=0>
+  sigma := cauchy(0, 1)<lower=0>
+
+  observe(normal(log(cHatObs), sigma),logCObs)

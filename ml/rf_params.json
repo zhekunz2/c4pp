@@ -1,0 +1,26 @@
+{
+  "timeseries_mutants_7": {
+    "rhat_min": {
+    "criterion": "entropy", "max_features": 100, "max_depth": 30, "bootstrap": true, "min_samples_leaf": 1, "min_samples_split": 15, "n_estimators": 20}
+    ,
+    "wass": {
+   "n_estimators": 250, "criterion": "entropy", "max_features": 80, "bootstrap": false, "min_samples_split": 15, "max_depth": 60, "min_samples_leaf": 7
+    }
+  },
+  "mixture_mutants_5": {
+    "rhat_min": {
+     "n_estimators": 250, "min_samples_split": 6, "max_depth": 60, "criterion": "entropy", "bootstrap": false, "min_samples_leaf": 4, "max_features": 80 
+    },
+    "wass": {
+     "n_estimators": 50, "max_features": 50, "bootstrap": true, "max_depth": 20, "criterion": "entropy", "min_samples_leaf": 2, "min_samples_split": 15
+    }
+  },
+  "lrm_mutants_9": {
+    "rhat_min": {
+      "criterion": "entropy", "min_samples_leaf": 2, "min_samples_split": 11, "max_depth": 40, "bootstrap": false, "max_features": 50, "n_estimators": 50
+    },
+    "wass": {
+     "bootstrap": false, "max_features": 30, "criterion": "gini", "min_samples_leaf": 2, "n_estimators": 50, "max_depth": 70, "min_samples_split": 20
+    }
+  }
+}

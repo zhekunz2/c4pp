@@ -1,0 +1,4 @@
+dummy : 0
+y := normal(1234.0,1234.0)<lower=-1,upper=1>
+increment_log_prob(log1m(fabs(y)))
+posterior(y)

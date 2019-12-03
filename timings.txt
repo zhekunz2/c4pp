@@ -1,0 +1,41 @@
+find programs/lrm_mutant_8  -name "ctemplate.template"  | shuf | cut -d"/" -f1-4 | parallel -j 20 ./compute_features.py {}
+real    495m41.406s
+user    9718m26.544s
+sys     286m51.136s
+
+
+./mutate_templates_mixture.sh 113m42s 600 mutants/template
+./mutate_templates_timeseries.sh 120m34s 500 mutants/template
+
+timeseries mutants 6 144mins 600 mutants/template galeb
+mixture mutants 4 115mins 600 mutants/template phoenix
+nmix0 35m phoenix
+nmix2 25m phoenix
+
+mutants generation
+timseries 7 151 phoenix
+mixture 5 120 galeb
+lrm 9 249 galeb 200/model
+mixture 6 151 phoenix 600/model
+mixture 7 146 phoenix 600/model
+
+
+features timeseries 4 70m phoenix
+features timeseries 7 48m5s galeb
+features mixture5 30m phoenix + 42m
+features lrm 9 45mins galeb
+features mix 6 79mins phoenix
+
+
+features_grammar mixture 5 33m phoenix
+features_grammar timeseries 7 42m phoenix
+features_g2 mix 5 40mins phoenix
+features_g2 lrm 9 26mins galeb
+
+timeseries 8 72m phoenix 200/template
+
+features timeseries 8 33min phoenix
+
+features ast2 timeseries 7 28m galeb
+
+features ast_full lrm 9 20m galeb
